@@ -1,0 +1,13 @@
+<h1>Create a life</h1>
+
+<%= simple_form_for @life, url: lives_path, method: :post do |f| %>
+  <%= f.input :description %>
+  <%= f.input :img_url %>
+  <%= f.input :price_per_day %>
+  <%= f.input :city %>
+  <%= f.input :job %>
+  <%= f.input :family %>
+  <%= f.input :relationship %>
+  <%= f.input :hobby %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
