@@ -5,7 +5,7 @@ class CreateLives < ActiveRecord::Migration[6.0]
       t.string :img_url
       t.integer :price_per_day
       t.string :city
-      t.boolean :availability, :default => true
+      t.boolean :availability, default: true
       t.string :job
       t.string :family
       t.string :relationship
