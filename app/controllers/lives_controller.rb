@@ -1,3 +1,24 @@
 class LivesController < ApplicationController
-  belongs_to :user
+  def index
+    @lives = Life.all
+  end
+
+  def new
+    @life = Life.new
+  end
+
+  def create
+    @life = Life.new(life_params)
+    if @life.save
+      redirect_to live_path(@life)
+    else
+      render 'new'
+    end
+  end
+
+  private
+
+  def life_params
+    params.require(:review).permit(:description, :img_url, :price_per_day, :city, :job, :family, :relationship, :hobby)
+  end
 end
