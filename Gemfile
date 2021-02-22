@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'bootstrap', '~> 4.6.0'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -63,3 +64,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #devise gem for authentification
 gem 'devise'
+
+
