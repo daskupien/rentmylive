@@ -1,4 +1,76 @@
 // Specific CSS for your home-page
-body {
-  background: grey;
+.banner {
+  background-image: asset-url('banner.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+   h1 {
+    margin: 0;
+    margin-bottom: 30px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+   }
+   p {
+    font-size: 20px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+   }
+}
+
+.container {
+  margin: 0 auto;
+  margin-left: 60px;
+  img {
+    width: 100%;
+  }
+}
+
+.container a {
+  color: white;
+  padding: 8px 50px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #FF385C;
+  &:hover {
+    background: #ff9966;
+    color: white;
+  }
+}
+
+.search-middle {
+  padding: 20px 30px 15px;
+  background-color: #D4D4D4;
+}
+
+.column-start {
+  padding: 10px;
+  margin-right: 10px;
+  label {
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+  input {
+    border: none;
+    background: transparent;
+    outline: none;
+  }
+}
+
+.column {
+  border-left: 1px solid #B3B3B3;
+  padding: 10px;
+  margin-right: 10px;
+  label {
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+  input {
+    border: none;
+    background: transparent;
+    outline: none;
+  }
 }
