@@ -1,0 +1,14 @@
+.btn-normal {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: light;
+  background: #FF385C;
+  transition: background 0.3s ease;
+  border: 1px solid #FF385C;
+}
+
+.btn-normal:hover {
+  background: #FF385C;
+  color: white;
+}

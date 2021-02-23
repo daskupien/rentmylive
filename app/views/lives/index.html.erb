@@ -1,27 +1,31 @@
 <div class="container-lives">
-  <h1>All LIFE´s</h1>
-  <p>Search for the LIFE you want to experience!</p>
-  <br>
+  <h1>ALL LIFE´s</h1>
+  <h3>Search for the LIFE you want to experience!</h3>
 
-  <% @lives.each do |live| %>
-    <div class="card-product">
-      <img src="<%= live.img_url %>" alt="">
-      <div class="card-product-infos">
-        <div class="d-flex justify-content-between w-100">
-          <h2>Lifes owner: <%= live.user.first_name %> <%= live.user.last_name %></h2>
+  <div class="container-cards">
+    <% @lives.each do |live| %>
+      <div class="card-product">
+        <img src="<%= live.img_url %>" alt="">
+        <div class="card-product-infos">
+          <div class="d-flex justify-content-between w-100">
+            <h2><%= live.user.first_name %> <%= live.user.last_name %></h2>
+          </div>
+          <div class="d-flex justify-content-between w-100">
+            <p><strong>Job:</strong> <%= live.job.capitalize %></p>
+            <p><strong>Family:</strong> <%= live.family.capitalize %></p>
+            <p><strong>City:</strong> <%= live.city.capitalize %></p>
+          </div>
+          <div class="d-flex justify-content-between w-100">
+            <p><strong>Bio:</strong> <%= live.description.capitalize %></p>
+            <p><strong>Relationship:</strong> <%= live.relationship.capitalize %></p>
+            <p><strong>Hobby:</strong> <%= live.hobby.capitalize %></p>
+          </div>
+          <div class="d-flex justify-content-between w-100">
+            <p><strong>Price Per Day: </strong><%= live.price_per_day %>€</p>
+            <a class="btn btn-normal" href="#">Book now</a>
+          </div>
         </div>
-        <div class="d-flex justify-content-between w-100">
-          <p><strong>Job:</strong> <%= live.job %></p>
-          <p><strong>Family:</strong> <%= live.family %></p>
-          <p><strong>City:</strong> <%= live.city %></p>
-        </div>
-        <div class="d-flex justify-content-between w-100">
-          <p><strong>Bio:</strong> <%= live.description %></p>
-          <p><strong>Relationship:</strong> <%= live.relationship %></p>
-          <p><strong>Hobby:</strong> <%= live.hobby %></p>
-        </div>
-          <p><strong>Price Per Day: </strong><%= live.price_per_day %></p>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
