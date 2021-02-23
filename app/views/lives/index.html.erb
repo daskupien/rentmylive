@@ -1,16 +1,27 @@
-<h1>All Lifes</h1>
-<p>Search for a life you want to rent</p>
+<div class="container-lives">
+  <h1>All LIFE´s</h1>
+  <p>Search for the LIFE you want to experience!</p>
+  <br>
 
-<% @lives.each do |live| %>
-  <ul>
-    <img src=<%= live.img_url %> alt="">
-    <li><%= live.description %></li>
-    <li>Lifes owner: <%= live.user.first_name %> <%= live.user.last_name %></li>
-    <li><%= live.price_per_day %></li>
-    <li><%= live.city %></li>
-    <li><%= live.job %></li>
-    <li><%= live.family %></li>
-    <li><%= live.relationship %></li>
-    <li><%= live.hobby %></li>
-  </ul>
-<% end %>
+  <% @lives.each do |live| %>
+    <div class="card-product">
+      <img src="<%= live.img_url %>" alt="">
+      <div class="card-product-infos">
+        <div class="d-flex justify-content-between w-100">
+          <h2>Lifes owner: <%= live.user.first_name %> <%= live.user.last_name %></h2>
+        </div>
+        <div class="d-flex justify-content-between w-100">
+          <p><strong>Job:</strong> <%= live.job %></p>
+          <p><strong>Family:</strong> <%= live.family %></p>
+          <p><strong>City:</strong> <%= live.city %></p>
+        </div>
+        <div class="d-flex justify-content-between w-100">
+          <p><strong>Bio:</strong> <%= live.description %></p>
+          <p><strong>Relationship:</strong> <%= live.relationship %></p>
+          <p><strong>Hobby:</strong> <%= live.hobby %></p>
+        </div>
+          <p><strong>Price Per Day: </strong><%= live.price_per_day %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
