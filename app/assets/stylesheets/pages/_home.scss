@@ -2,6 +2,7 @@
 @import '../config/fonts';
 @import '../components/banner';
 @import '../components/home-searchbar-middle';
+@import '../components/home-life-card';
 
 .container {
   margin: 0 auto;
@@ -21,27 +22,5 @@
   &:hover {
     background: #ff9966;
     color: white;
-  }
-}
-
-.card-header {
-  padding: 70px;
-  font-weight: bold;
-  border-bottom: 0;
-  margin-top: 10px;
-  background: white;
-}
-
-.card-life {
-  width: 300px;
-  height: 400px;
-  border: 1px solid;
-  border-radius: 15px;
-  img {
-    width: 260px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
   }
 }
