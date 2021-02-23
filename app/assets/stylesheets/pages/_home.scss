@@ -31,7 +31,7 @@
 
 .container a {
   color: white;
-  padding: 8px 24px;
+  padding: 8px 50px;
   border-radius: 10px;
   font-size: 16px;
   font-weight: bold;
@@ -39,5 +39,39 @@
   &:hover {
     background: #ff9966;
     color: white;
+  }
+}
+
+.search-middle {
+  padding: 20px 30px 15px;
+  background-color: #D4D4D4;
+}
+
+.column-start {
+  padding: 10px;
+  margin-right: 10px;
+  label {
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+  input {
+    border: none;
+    background: transparent;
+    outline: none;
+  }
+}
+
+.column {
+  border-left: 1px solid #B3B3B3;
+  padding: 10px;
+  margin-right: 10px;
+  label {
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+  input {
+    border: none;
+    background: transparent;
+    outline: none;
   }
 }
