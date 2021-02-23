@@ -1,6 +1,7 @@
 <h1>Create a life</h1>
 
 <%= simple_form_for @life, url: lives_path, method: :post do |f| %>
+
   <%= f.input :description %>
   <%= f.label "Profile Photo" %> <br>
   <%= f.file_field :avatar %><br><br>
