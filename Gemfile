@@ -67,5 +67,3 @@ gem 'devise'
 
 #cloudinay test
 gem 'cloudinary'
-
-
