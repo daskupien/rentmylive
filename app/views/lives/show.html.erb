@@ -1,4 +1,12 @@
-<h1>This is a Life</h1>
+<h1>The life of <%= @life.user.first_name %></h1>
 
-<%# TODO display the name of the lifes owner %>
-<%# TODO show more lifes %>
+<ul>
+  <img src=<%= @life.img_url %> alt="">
+  <li><%= @life.description %></li>
+  <li>Price per day: <%= @life.price_per_day %></li>
+  <li>City: <%= @life.city %></li>
+  <li>Job: <%= @life.job %></li>
+  <li>Family: <%= @life.family %></li>
+  <li>Relationship: <%= @life.relationship %></li>
+  <li>Hobby: <%= @life.hobby %></li>
+</ul>
