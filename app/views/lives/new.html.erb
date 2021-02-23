@@ -4,7 +4,7 @@
 
   <%= f.input :description %>
   <%= f.label "Profile Photo" %> <br>
-  <%= f.file_field :avatar %><br><br>
+  <%= f.file_field :avatar, direct_upload: true %><br><br>
   <%= f.input :price_per_day %>
   <%= f.input :city %>
   <%= f.input :job %>
