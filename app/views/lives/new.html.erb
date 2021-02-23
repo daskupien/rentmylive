@@ -1,13 +1,15 @@
 <h1>Create a life</h1>
 
 <%= simple_form_for @life, url: lives_path, method: :post do |f| %>
-  <%= f.input :description, required: true %>
-  <%= f.input :img_url, required: true %>
-  <%= f.input :price_per_day, required: true %>
-  <%= f.input :city, required: true %>
-  <%= f.input :job, required: true %>
-  <%= f.input :family, required: true %>
-  <%= f.input :relationship, required: true %>
-  <%= f.input :hobby, required: true %>
+
+  <%= f.input :description %>
+  <%= f.label "Profile Photo" %> <br>
+  <%= f.file_field :avatar %><br><br>
+  <%= f.input :price_per_day %>
+  <%= f.input :city %>
+  <%= f.input :job %>
+  <%= f.input :family %>
+  <%= f.input :relationship %>
+  <%= f.input :hobby %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
