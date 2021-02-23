@@ -2,7 +2,8 @@
 
 <%= simple_form_for @life, url: lives_path, method: :post do |f| %>
   <%= f.input :description %>
-  <%= f.input :imgage, as:file, label: "avatar" %>
+  <%= f.label "Profile Photo" %> <br>
+  <%= f.file_field :avatar %><br><br>
   <%= f.input :price_per_day %>
   <%= f.input :city %>
   <%= f.input :job %>
