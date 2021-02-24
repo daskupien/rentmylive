@@ -1,15 +1,16 @@
-<h1>The life of <%= @life.user.first_name %></h1>
+<div class="container">
 
-<ul>
+  <h1>The life of <%= @life.user.first_name %></h1>
 
+  <ul>
+    <%= cl_image_tag @life.photo.key, width: 250, height: 300, crop: :fill %>
+    <li><%= @life.description %></li>
+    <li>Price per day: <%= @life.price_per_day %></li>
+    <li>City: <%= @life.city %></li>
+    <li>Job: <%= @life.job %></li>
+    <li>Family: <%= @life.family %></li>
+    <li>Relationship: <%= @life.relationship %></li>
+    <li>Hobby: <%= @life.hobby %></li>
+  </ul>
+</div>
 
-
-  <%= cl_image_tag @life.photo.key, width: 250, height: 300, crop: :fill %>
-  <li><%= @life.description %></li>
-  <li>Price per day: <%= @life.price_per_day %></li>
-  <li>City: <%= @life.city %></li>
-  <li>Job: <%= @life.job %></li>
-  <li>Family: <%= @life.family %></li>
-  <li>Relationship: <%= @life.relationship %></li>
-  <li>Hobby: <%= @life.hobby %></li>
-</ul>
