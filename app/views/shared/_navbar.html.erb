@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "logo_neu.png" %>
+    <%= cl_image_tag("assets/logo_new_kmd3ck.png") %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@
         <%= link_to "Home", "/", class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Browse LIFE´s", lives_path, class: "nav-link" %>
+        <%= link_to "Browse Lives", lives_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
         <%= link_to "Become Host", new_life_path, class: "nav-link" %>
