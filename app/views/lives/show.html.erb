@@ -4,7 +4,7 @@
 
 
 
-  <%= cl_image_tag @life.img_url, width: 250, height: 300, crop: :fill %>
+  <%= cl_image_tag @life.img_url.key, width: 250, height: 300, crop: :fill %>
   <li><%= @life.description %></li>
   <li>Price per day: <%= @life.price_per_day %></li>
   <li>City: <%= @life.city %></li>
