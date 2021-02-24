@@ -5,7 +5,7 @@
   <div class="container-cards">
     <% @lives.each do |live| %>
       <div class="card-product">
-        <img src="<%= live.img_url %>" alt="">
+        <%= cl_image_tag live.img_url, height: 300, width: 400, crop: :fill %>
         <div class="card-product-infos">
           <div class="d-flex justify-content-between w-100">
             <h2><%= live.user.first_name %> <%= live.user.last_name %></h2>
