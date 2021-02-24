@@ -17,12 +17,12 @@
   <div>
     <h2>Book this life</h2>
     <%= simple_form_for [@life, @booking], url: life_bookings_path(@life), method: :post do |f| %>
+      <p>Cost: <%= @life.price_per_day %> €</p>
       <%# <%= f.input :description, placeholder: "Book this life" %>
       <%# TODO calculate price by day difference after demo day %>
       <%# <%= f.input :start_date %>
       <%# <%= f.input :end_date %>
-      <br>
-      <%= f.submit class: "btn btn-normal" %>
+      <%= f.submit class: "btn btn-normal", placeholder: 'Book now!' %>
     <% end %>
   </div>
 </div>
