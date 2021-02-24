@@ -14,14 +14,14 @@
         <%= link_to "Home", "/", class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "All LIFE´s", "#", class: "nav-link" %>
+        <%= link_to "Browse LIFE´s", lives_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Become Host", "#", class: "nav-link" %>
+        <%= link_to "Become Host", new_life_path, class: "nav-link" %>
       </li>
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Account", "#", class: "nav-link" %>
+          <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
