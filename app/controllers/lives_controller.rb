@@ -5,6 +5,7 @@ class LivesController < ApplicationController
 
   def show
     @life = Life.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

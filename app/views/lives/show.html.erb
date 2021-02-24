@@ -12,5 +12,18 @@
     <li>Relationship: <%= @life.relationship %></li>
     <li>Hobby: <%= @life.hobby %></li>
   </ul>
+
+  <br>
+  <div>
+    <h2>Book this life</h2>
+    <%= simple_form_for [@life, @booking], url: life_bookings_path(@life), method: :post do |f| %>
+      <%# <%= f.input :description, placeholder: "Book this life" %>
+      <%# TODO calculate price by day difference after demo day %>
+      <%# <%= f.input :start_date %>
+      <%# <%= f.input :end_date %>
+      <br>
+      <%= f.submit class: "btn btn-normal" %>
+    <% end %>
+  </div>
 </div>
 

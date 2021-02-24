@@ -3,29 +3,26 @@
   <h3>Search for the LIFE you want to experience!</h3>
 
   <div class="container-cards">
-    <% @lives.each do |live| %>
+    <% @lives.each do |life| %>
       <div class="card-product">
-        <%= cl_image_tag live.photo.key, crop: :fill %>
+        <%= cl_image_tag life.photo.key, crop: :fill %>
         <div class="card-product-infos">
           <div class="d-flex justify-content-between w-100">
-            <h2><%= live.user.first_name %> <%= live.user.last_name %></h2>
+            <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
           </div>
           <div class="d-flex justify-content-between w-100">
-            <p><strong>Job:</strong> <%= live.job.capitalize %></p>
-            <p><strong>Family:</strong> <%= live.family.capitalize %></p>
-            <p><strong>City:</strong> <%= live.city.capitalize %></p>
+            <p><strong>Job:</strong> <%= life.job.capitalize %></p>
+            <p><strong>Family:</strong> <%= life.family.capitalize %></p>
+            <p><strong>City:</strong> <%= life.city.capitalize %></p>
           </div>
           <div class="d-flex justify-content-between w-100">
-            <p><strong>Bio:</strong> <%= live.description.capitalize %></p>
-            <p><strong>Relationship:</strong> <%= live.relationship.capitalize %></p>
-            <p><strong>Hobby:</strong> <%= live.hobby.capitalize %></p>
+            <p><strong>Bio:</strong> <%= life.description.capitalize %></p>
+            <p><strong>Relationship:</strong> <%= life.relationship.capitalize %></p>
+            <p><strong>Hobby:</strong> <%= life.hobby.capitalize %></p>
           </div>
           <div class="d-flex justify-content-between w-100">
-            <p><strong>Price Per Day: </strong><%= live.price_per_day %>€</p>
-          </div>
-          <br>
-          <div>
-            <a class="btn btn-normal" href="#">Book now</a>
+            <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
+            <%= link_to "Book now", life_path(life), {:class => "btn btn-normal"} %>
           </div>
         </div>
       </div>
