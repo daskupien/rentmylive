@@ -9,14 +9,15 @@ require 'open-uri'
 
 User.destroy_all
 Life.destroy_all
-
+puts 'creating users'
 euan = User.create!(email: 'euan@email.com', password: '1234567', first_name: 'Euan', last_name: 'Last', address: 'street', gender: 'male', host_bio:'crazy guy from around')
 
 claire = User.create!(email: 'claire@email.com', password: '1234567', first_name: 'Claire', last_name: 'Last', address: 'street', gender: 'female', host_bio:'crazy girls from france')
 
 jim = User.create!(email: 'jim@email.com', password: '1234567', first_name: 'Jim', last_name: 'Last', address: 'street', gender: 'male', host_bio:'Jimmy trimmi')
-
-Life.create!(
+puts 'finished'
+puts 'creating lives'
+life_1 = Life.new(
     description: 'This is a description',
     price_per_day: 100,
     city: 'New York',
@@ -24,20 +25,40 @@ Life.create!(
     family: 'all weird people',
     relationship: 'paired',
     hobby: 'dancing',
-    user_id: euan.id
+    user_id: euan.id,
+    img_url: 'https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
 )
 file = URI.open('https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
-@life.img_url.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_1.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_1.save
 
-# user2 = User.create(
-#     first_name: "Tanya",
-#     last_name: "Silverman",
-#     location: "E1 6QR",
-#     email: "tanya_s@gmail.com",
-#     password: '123123',
-#     description: 'Science fiction and dramatic novels are my bread and butter. There is nothing better than lighting some candles and reading in the bath',
-#     )
-#     file = URI.open('https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
-#     @life.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_2 = Life.new(
+    description: 'This is a description',
+    price_per_day: 100,
+    city: 'New York',
+    job: 'stripper',
+    family: 'all weird people',
+    relationship: 'paired',
+    hobby: 'dancing',
+    user_id: claire.id,
+    img_url: 'https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
+)
+file = URI.open('https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
+life_2.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_2.save
 
-#     @book.photo.attach(io: cover_file, filename: 'cover.jpg', content_type: 'image/jpg')
+life_3 = Life.new(
+    description: 'This is a description',
+    price_per_day: 100,
+    city: 'New York',
+    job: 'stripper',
+    family: 'all weird people',
+    relationship: 'paired',
+    hobby: 'dancing',
+    user_id: jim.id,
+    img_url: 'https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
+)
+file = URI.open('https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
+life_3.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_3.save
+puts 'finished'
