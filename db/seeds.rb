@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
 User.destroy_all
 Life.destroy_all
@@ -15,8 +16,28 @@ claire = User.create!(email: 'claire@email.com', password: '1234567', first_name
 
 jim = User.create!(email: 'jim@email.com', password: '1234567', first_name: 'Jim', last_name: 'Last', address: 'street', gender: 'male', host_bio:'Jimmy trimmi')
 
-Life.create!(description: 'This is a description', img_url: 'http://images4.fanpop.com/image/photos/23700000/Funny-random-23797915-1000-981.jpg', price_per_day: 100, city: 'New York', job: 'stripper', family: 'all weird people', relationship: 'paired', hobby: 'dancing', user_id: euan.id)
+Life.create!(
+    description: 'This is a description',
+    price_per_day: 100,
+    city: 'New York',
+    job: 'stripper',
+    family: 'all weird people',
+    relationship: 'paired',
+    hobby: 'dancing',
+    user_id: euan.id
+)
+file = URI.open('https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
+@life.img_url.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
-Life.create!(description: 'This is a description', img_url: 'https://media.nesta.org.uk/images/Predictions-2019_Twitter_02.width-1200.png', price_per_day: 200, city: 'Berlin', job: 'gardener', family: 'all weird people', relationship: 'paired', hobby: 'dancing', user_id: claire.id)
+# user2 = User.create(
+#     first_name: "Tanya",
+#     last_name: "Silverman",
+#     location: "E1 6QR",
+#     email: "tanya_s@gmail.com",
+#     password: '123123',
+#     description: 'Science fiction and dramatic novels are my bread and butter. There is nothing better than lighting some candles and reading in the bath',
+#     )
+#     file = URI.open('https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
+#     @life.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 
-Life.create!(description: 'This is a description', img_url: 'http://images2.fanpop.com/image/photos/14300000/Beautiful-Wallpaper-random-14312356-2560-1600.jpg', price_per_day: 150, city: 'Munich', job: 'shark saver', family: 'too many', relationship: 'paired', hobby: 'dancing', user_id: jim.id)
+#     @book.photo.attach(io: cover_file, filename: 'cover.jpg', content_type: 'image/jpg')
