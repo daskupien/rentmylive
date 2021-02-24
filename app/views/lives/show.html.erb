@@ -14,14 +14,20 @@
   </ul>
 
   # TODO create simple form with start and end date
-  <div>
-    <%= simple_form_for(@booking) do |f| %>
-      <%= f.input :first_name %>
-      <%= f.input :start_date, :as => :date_picker %>
-      <%= f.input :end_date, :as => :date_picker %>
-      <%= f.submit %>
-    <% end %>
-  </div>
+  <%= simple_form_for @life, url: lives_path, method: :post do |f| %>
+    <%= f.input :description, placeholder: "Book this life" %>
+    <%= f.label "Profile Photo" %>
+    <br>
+    <%= f.file_field :img_url, direct_upload: true %><br><br>
+    <%= f.input :price_per_day %>
+    <%= f.input :city %>
+    <%= f.input :job %>
+    <%= f.input :family %>
+    <%= f.input :relationship %>
+    <%= f.input :hobby %>
+    <br>
+    <%= f.submit class: "btn btn-normal" %>
+  <% end %>
 
 </div>
 
