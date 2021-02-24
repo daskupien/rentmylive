@@ -3,6 +3,19 @@
 
   <%= simple_form_for @life, url: lives_path, method: :post do |f| %>
 
+<<<<<<< HEAD
+  <%= f.input :description %>
+  <%= f.label "Profile Photo" %> <br>
+  <%= f.file_field :photo, direct_upload: true %><br><br>
+  <%= f.input :price_per_day %>
+  <%= f.input :city %>
+  <%= f.input :job %>
+  <%= f.input :family %>
+  <%= f.input :relationship %>
+  <%= f.input :hobby %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+=======
     <%= f.input :description, placeholder: "please describe your life!" %>
     <%= f.label "Profile Photo" %>
     <br>
@@ -17,3 +30,4 @@
     <%= f.submit class: "btn btn-normal" %>
   <% end %>
 </div>
+>>>>>>> master
