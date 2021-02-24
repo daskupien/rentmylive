@@ -1,20 +1,26 @@
-<h1>The life of <%= @life.user.first_name %></h1>
+<div class="container">
 
-<ul>
-  <%= cl_image_tag @life.img_url.key, width: 250, height: 300, crop: :fill %>
-  <li><%= @life.description %></li>
-  <li>Price per day: <%= @life.price_per_day %></li>
-  <li>City: <%= @life.city %></li>
-  <li>Job: <%= @life.job %></li>
-  <li>Family: <%= @life.family %></li>
-  <li>Relationship: <%= @life.relationship %></li>
-  <li>Hobby: <%= @life.hobby %></li>
-</ul>
+  <h1>The life of <%= @life.user.first_name %></h1>
 
-# TODO create simple form with start and end date
+  <ul>
+    <%= cl_image_tag @life.photo.key, width: 250, height: 300, crop: :fill %>
+    <li><%= @life.description %></li>
+    <li>Price per day: <%= @life.price_per_day %></li>
+    <li>City: <%= @life.city %></li>
+    <li>Job: <%= @life.job %></li>
+    <li>Family: <%= @life.family %></li>
+    <li>Relationship: <%= @life.relationship %></li>
+    <li>Hobby: <%= @life.hobby %></li>
+  </ul>
 
-<%= simple_form_for(@booking) do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name, :as => :date_picker %>
-  <%= f.submit %>
-<% end %>
+  # TODO create simple form with start and end date
+  <div>
+    <%= simple_form_for(@booking) do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name, :as => :date_picker %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+</div>
+
