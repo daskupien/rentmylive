@@ -1,9 +1,6 @@
 <h1>The life of <%= @life.user.first_name %></h1>
 
 <ul>
-
-
-
   <%= cl_image_tag @life.img_url, width: 250, height: 300, crop: :fill %>
   <li><%= @life.description %></li>
   <li>Price per day: <%= @life.price_per_day %></li>
@@ -13,3 +10,4 @@
   <li>Relationship: <%= @life.relationship %></li>
   <li>Hobby: <%= @life.hobby %></li>
 </ul>
+
