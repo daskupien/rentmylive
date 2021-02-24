@@ -11,3 +11,10 @@
   <li>Hobby: <%= @life.hobby %></li>
 </ul>
 
+# TODO create simple form with start and end date
+
+<%= simple_form_for(@booking) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name, :as => :date_picker %>
+  <%= f.submit %>
+<% end %>
