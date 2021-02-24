@@ -20,9 +20,10 @@
   font-weight: light;
   background: #FF385C;
   transition: background 0.3s ease;
-  &:hover {
-    background: #ffaec0;
-    color: white;
-    text-decoration: none;
-  }
+}
+
+.btn-large:hover {
+  background: #ffaec0;
+  color: white;
+  text-decoration: none;
 }
