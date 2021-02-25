@@ -9,7 +9,9 @@ require 'open-uri'
 
 User.destroy_all
 Life.destroy_all
+
 puts 'creating users'
+
 euan = User.create!(email: 'euan@email.com', password: '1234567', first_name: 'Euan', last_name: 'Hunter', address: 'street', gender: 'male', host_bio:'crazy guy from around')
 
 claire = User.create!(email: 'claire@email.com', password: '1234567', first_name: 'Claire', last_name: 'Brady', address: 'street', gender: 'female', host_bio:'crazy girls from france')
@@ -25,8 +27,9 @@ valerie = User.create!(email: 'valerie@email.com', password: '1234567', first_na
 john = User.create!(email: 'john@email.com', password: '1234567', first_name: 'John', last_name: 'Lemon', address: 'street', gender: 'male', host_bio:'Music is my business')
 
 west = User.create!(email: 'west@email.com', password: '1234567', first_name: 'West', last_name: 'Kanye', address: 'street', gender: 'female', host_bio:'West is cool')
-puts 'finished'
+
 puts 'creating lives'
+
 life_1 = Life.new(
     description: 'This is a description',
     price_per_day: 100,
