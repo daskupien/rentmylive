@@ -1,6 +1,7 @@
 <div class="container container-users">
-  <div id='user-profile'>
-    <div id='user-profile-information'>
+  <div>
+    <%# USER-PROFILE %>
+    <div>
       <h1>Hi <%= @user.first_name %>!</h1>
       <br>
         <p><strong>Your Email:</strong> <%= @user.email %></p>
@@ -11,13 +12,15 @@
       <br>
     </div>
 
-    <div id='update-profile'>
-      <%= link_to "Update Your Profile!", lives_path %>
+    <%# UPDATE-PROFILE %>
+    <div>
+      <%= link_to "Update Your Profile!", lives_path, class: "btn-normal" %>
     </div>
   </div>
 
+  <%# MY-BOOKINGS %>
   <div>
-    <div id='my-bookings' class="container-cards">
+    <div class="container-cards">
       <h2>My Bookings</h2>
       <% @bookings.each do |booking| %>
         <div class="card-product">
@@ -45,9 +48,10 @@
     </div>
   </div>
 
-  <div id='my-lives'>
+  <%# MY-LIVES %>
+  <div>
     <div class="container-cards">
-      <h2>My Lifes</h2>
+      <h2>My Lives</h2>
       <% @lives.each do |life| %>
         <div class="card-product">
           <%= cl_image_tag life.photo.key, crop: :fill %>
