@@ -4,10 +4,21 @@
       <h1>What is your Dream LIFE? find out!</h1>
       <!-- <p>Change your life and learn to code at one of our campuses around the world.</p> -->
       <%= link_to "Book your first LIVE now!", lives_path %>
+
+      <div class="searchbar">
+        <%= form_tag lives_path, method: :get do %>
+          <%= label_tag "City"  %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find your new life in your favorite location!"
+          %>
+        <% end %>
+      </div>
     </div>
   </div>
 
-  <div class="search-middle row g-4">
+  <!-- <div class="search-middle row g-4">
     <div class="col-sm-3 column-start">
       <label for="input-city" class="form-label">City</label>
       <input type="text" class="form-control" placeholder="Where do you want to go?" id="input-city">
@@ -24,7 +35,9 @@
       <label for="input-specific-wish" class="form-label">Filter</label>
       <input type="text" class="form-control" placeholder="Any specific wishes for your journey?" id="input-specific-wish">
     </div>
-  </div>
+  </div> -->
+
+
   <div class="card-header">
       <h1>This weeks favorite LIFE's:</h1>
   </div>
