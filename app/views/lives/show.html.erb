@@ -21,8 +21,9 @@
   <br>
   <br>
   <br>
-  <div class="container">
-    <% if @life.user != current_user %>
+  
+  <% if @life.user != current_user %>
+    <div class="content d-flex">
       <div class="form-wrapper" style="width: 400px;">
         <h2>Book this life</h2>
         <%# TODO somehow the start_date lines with be dublicated when clicked on back in browser %>
@@ -32,10 +33,10 @@
           <%= f.input :end_date, as: :string, required: false, input_html: {id: "range_end"} %>
           <%= f.submit class: "btn btn-normal", placeholder: 'Book now!' %>
         <% end %>
-      <% else %>
-        <%= link_to "Cancel my offer", life_path(@life), class: "btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% else %>
+    <%= link_to "Cancel my offer", life_path(@life), class: "btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %> 
 </div>
 
