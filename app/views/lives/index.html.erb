@@ -23,9 +23,15 @@
             <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
           </div>
           <br>
-          <div class="d-flex justify-content-end">
-            <%= link_to "Book now", life_path(life), {:class => "btn btn-normal"} %>
-          </div>
+          <% if life.user != current_user %>
+            <div class="d-flex justify-content-end">
+              <%= link_to "Book now", life_path(life), {:class => "btn btn-normal"} %>
+            </div>
+          <% else %>
+            <div class="d-flex justify-content-end">
+              <%= link_to "Show my offer", life_path(life), {:class => "btn btn-normal"} %>
+            </div>
+          <% end %>
         </div>
       </div>
     <% end %>
