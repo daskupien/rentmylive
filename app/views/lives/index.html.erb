@@ -6,7 +6,7 @@
      <div class="card-lives-all">
         <%= cl_image_tag life.photo.key, crop: :fill %>
         <div class="card-lives-content">
-          <p><strong><%= life.user.first_name %> <%= life.user.last_name %></strong></p>
+          <p class="text-center"><strong><%= life.user.first_name %> <%= life.user.last_name %></strong></p>
           <p><strong>City:</strong> <%= life.city.capitalize %></p>
           <p><strong>Info:</strong> <%= life.description.capitalize %></p>
           <p><strong>Job:</strong> <%= life.job.capitalize %></p>
@@ -15,17 +15,18 @@
           <p><strong>Hobby:</strong> <%= life.hobby.capitalize %></p>
           <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
         </div>
-        <% if life.user != current_user %>
-          <div>
-            <%= link_to "Book now", life_path(life), class: "btn btn-normal" %>
-          </div>
-        <% else %>
-          <div>
-            <%= link_to "Show my offer", life_path(life), class: "btn btn-normal" %>
-          </div>
-        <% end %>
+        <div class="card-lives-button">
+          <% if life.user != current_user %>
+            <div>
+              <%= link_to "Book now", life_path(life), class: "btn btn-normal" %>
+            </div>
+          <% else %>
+            <div>
+              <%= link_to "Show My Offer", life_path(life), class: "btn btn-normal" %>
+            </div>
+          <% end %>
+        </div>
       </div>
     <% end %>
-  </div>
   </div>
 </div>
