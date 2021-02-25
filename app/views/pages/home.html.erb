@@ -6,19 +6,19 @@
 
       <div class="searchbar">
         <%= form_tag lives_path, method: :get do %>
-          <%= label_tag "City"  %>
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
             placeholder: "Find your new life in your favorite location!"
           %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
   </div>
 
   <div class="card-header">
-      <h1>This weeks favorite LIFE's:</h1>
+      <h1>This weeks favorite Lives:</h1>
   </div>
   <div class="card">
     <div class="card-life">
