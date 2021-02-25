@@ -1,8 +1,8 @@
 <div class="container-general">
   <div>
     <%# USER-PROFILE %>
-    <div>
-      <h1>Hi <%= @user.first_name %>!</h1>
+    <h1>Hi <%= @user.first_name %>!</h1>
+    <div class="user-profile">
       <br>
         <p><strong>Your Email:</strong> <%= @user.email %></p>
         <p><strong>Your Address:</strong> <%= @user.address %></p>
@@ -10,11 +10,12 @@
         <p><strong>Your Gender:</strong> <%= @user.gender %></p>
         <p><strong>Your Bio:</strong> <%= @user.host_bio %></p>
       <br>
-    </div>
+
 
     <%# UPDATE-PROFILE %>
-    <div>
-      <%= link_to "Update Your Profile!", lives_path, class: "btn-normal" %>
+      <div>
+        <%= link_to "Update Your Profile!", lives_path, class: "btn-normal" %>
+      </div>
     </div>
   </div>
 
