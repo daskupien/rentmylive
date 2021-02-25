@@ -1,10 +1,8 @@
- <div class="container-home">
+<div class="container-home">
   <div class="banner">
     <div class="container container-banner">
       <h1>What is your Dream LIFE? find out!</h1>
-      <!-- <p>Change your life and learn to code at one of our campuses around the world.</p> -->
-      <%= link_to "Book your first LIVE now!", lives_path, class: "btn-large" %>
-
+      <%= link_to "Book your first LIVE now!", lives_path %>
       <div class="searchbar">
         <%= form_tag lives_path, method: :get do %>
           <%= text_field_tag :query,
@@ -17,58 +15,24 @@
       </div>
     </div>
   </div>
-
   <div class="card-header">
-      <h1>This weeks favorite Lives:</h1>
+    <h1><strong>Inspiration for future LIFE</strong></h1>
+    <h4>Lives to book with your upcoming experience</h4>
   </div>
   <div class="card">
-    <div class="card-life">
-      <%= cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1/assets/card1-7f36b9268f18080af1209e01f67963521eed45d9a7fe88a6054b7f1717fa8b14_q07adn.jpg") %>
-      <div class="card-content">
-        <h5 class="card-title">
-          Susi Wong
-        </h5>
-        <p class="card-text">
-          what is the adventure your are looking for? 56 year old sailor can offer ypou some great hours
-        </p>
-        <a class="btn btn-normal" href="#">Book now</a>
+    <% @lives.each do |life| %>
+      <div class="card-life">
+        <%= cl_image_tag life.photo.key, crop: :fill %>
+        <div class="card-content">
+          <h5 class="card-title">
+            <%= life.user.first_name %> <%= life.user.last_name %>
+          </h5>
+          <p class="card-text">
+            <%= life.description.capitalize %>
+          </p>
+          <%= link_to "Book now", life_path(life), {:class => "btn btn-normal"} %>
+        </div>
       </div>
-    </div>
-    <div class="card-life">
-      <%= cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1/assets/card2-c80039848eaeda718140bd2a425e1ae30508cf6b464a9289df6b7ef375d0ee97_nnq46w.jpg") %>
-      <div class="card-content">
-        <h5 class="card-title">
-          Harry Solo
-        </h5>
-        <p class="card-text">
-          what is the adventure your are looking for? 56 year old sailor can offer ypou some great hours
-        </p>
-        <a class="btn btn-normal" href="#">Book now</a>
-      </div>
-    </div>
-    <div class="card-life">
-      <%= cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1/assets/card3-294b6d883210026424c88513466c98e61406fe8021ab8ac29922342e94a735b1_pr6doq.jpg") %>
-      <div class="card-content">
-        <h5 class="card-title">
-          Marie Schmidt
-        </h5>
-        <p class="card-text">
-          what is the adventure your are looking for? 56 year old sailor can offer ypou some great hours
-        </p>
-        <a class="btn btn-normal" href="#">Book now</a>
-      </div>
-    </div>
-    <div class="card-life">
-      <%= cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1/assets/card4-ddd348f64aa18a9a286d0ca31e0fad10689195ea6918796ca4b4c5bac0b20aef_obwobs.jpg") %>
-      <div class="card-content">
-        <h5 class="card-title">
-          Lucas Oldenberg
-        </h5>
-        <p class="card-text">
-          what is the adventure your are looking for? 56 year old sailor can offer ypou some great hours
-        </p>
-        <a class="btn btn-normal" href="#">Book now</a>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
