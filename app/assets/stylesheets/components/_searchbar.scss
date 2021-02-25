@@ -1,7 +1,8 @@
 .searchbar {
   padding: 10px 20px 10px 20px;
   background-color: white;
-  width: 600px;
+  width: 522px;
+  height: 80px;
   position: absolute;
   border-radius: 69px;
   top: 100px;
@@ -10,9 +11,10 @@
   form {
     padding: 20px;
     padding-left: 44px;
+    padding-top: 3px;
   }
   label {
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 600;
     padding-left: 10px;
     width: 494px;
@@ -25,7 +27,8 @@
     outline: none;
     border-bottom: 1px solid;
     vertical-align: middle;
-    width: 450px;
+    width: 397px;
     margin-left: 6px;
+    padding-top: 0;
   }
 }
