@@ -2,7 +2,7 @@
   <div class="banner">
     <div class="container container-banner">
       <h1>What is your Dream LIFE? find out!</h1>
-      <%= link_to "Book your first LIVE now!", lives_path, class: "btn btn-normal" %>
+      <%= link_to "Book your first LIVE now!", lives_path, class: "btn-large" %>
       <div class="searchbar">
         <%= form_tag lives_path, method: :get do %>
           <%= text_field_tag :query,
@@ -10,7 +10,9 @@
             class: "form-control",
             placeholder: "Find your new life in your favorite location!"
           %>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
+          <%= button_tag(type: "submit", class: "btn btn-default") do %>
+            <i class="fas fa-search"></i>
+          <% end %>
         <% end %>
       </div>
     </div>
