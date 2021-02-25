@@ -1,4 +1,36 @@
-<h1>This is a Life</h1>
+<div class="container container-lives">
 
-<%# TODO display the name of the lifes owner %>
-<%# TODO show more lifes %>
+  <h1>The Life of <%= @life.user.first_name %></h1>
+  <br>
+  <br>
+  <br>
+  <div class="content d-flex">
+    <div class="image">
+      <%= cl_image_tag @life.photo.key, width: 250, height: 300, crop: :fill %>
+    </div>
+    <div class="text-lives">
+      <p><strong>Descirption:</strong> <%= @life.description %></p>
+      <p><strong>City:</strong> <%= @life.city %></p>
+      <p><strong>Job:</strong> <%= @life.job %></p>
+      <p><strong>Family:</strong> <%= @life.family %></p>
+      <p><strong>Relationship:</strong> <%= @life.relationship %></p>
+      <p><strong>Hobby:</strong> <%= @life.hobby %></p>
+      <p><strong>Price per day:</strong> <%= @life.price_per_day %>€</p>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="text-center">
+    <h2>Book this life</h2>
+    <%= simple_form_for [@life, @booking], url: life_bookings_path(@life), method: :post do |f| %>
+      <p>Cost: <%= @life.price_per_day %> €</p>
+      <%# <%= f.input :description, placeholder: "Book this life" %>
+      <%# TODO calculate price by day difference after demo day %>
+      <%# <%= f.input :start_date %>
+      <%# <%= f.input :end_date %>
+      <%= f.submit class: "btn btn-normal", placeholder: 'Book now!' %>
+    <% end %>
+  </div>
+</div>
+

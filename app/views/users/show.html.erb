@@ -1,0 +1,11 @@
+<div class="container container-users">
+  <h1>Hi <%= @user.first_name %>!</h1>
+  <br>
+    <p>Your Email: <%= @user.email %></p>
+    <p>Your Address: <%= @user.address %></p>
+    <p>Your Age: <%= @user.age %></p>
+    <p>Your Gender: <%= @user.gender %></p>
+    <p>Your Bio: <%= @user.host_bio %></p>
+  <br>
+  <%= link_to "Update Your Profile!", lives_path %>
+</div>

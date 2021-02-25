@@ -5,18 +5,146 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
 User.destroy_all
 Life.destroy_all
+puts 'creating users'
+euan = User.create!(email: 'euan@email.com', password: '1234567', first_name: 'Euan', last_name: 'Hunter', address: 'street', gender: 'male', host_bio:'crazy guy from around')
 
-euan = User.create!(email: 'euan@email.com', password: '1234567', first_name: 'Euan', last_name: 'Last', address: 'street', gender: 'male', host_bio:'crazy guy from around')
+claire = User.create!(email: 'claire@email.com', password: '1234567', first_name: 'Claire', last_name: 'Brady', address: 'street', gender: 'female', host_bio:'crazy girls from france')
 
-claire = User.create!(email: 'claire@email.com', password: '1234567', first_name: 'Claire', last_name: 'Last', address: 'street', gender: 'female', host_bio:'crazy girls from france')
+jim = User.create!(email: 'jim@email.com', password: '1234567', first_name: 'Jim', last_name: 'Carrey', address: 'street', gender: 'male', host_bio:'There is no business like show business')
 
-jim = User.create!(email: 'jim@email.com', password: '1234567', first_name: 'Jim', last_name: 'Last', address: 'street', gender: 'male', host_bio:'Jimmy trimmi')
+tom = User.create!(email: 'tom@email.com', password: '1234567', first_name: 'Tom', last_name: 'Riddle', address: 'street', gender: 'male', host_bio:'I love Harry Potter')
 
-Life.create!(description: 'This is a description', img_url: 'http://images4.fanpop.com/image/photos/23700000/Funny-random-23797915-1000-981.jpg', price_per_day: 100, city: 'New York', job: 'stripper', family: 'all weird people', relationship: 'paired', hobby: 'dancing', user_id: euan.id)
+sarah = User.create!(email: 'sarah@email.com', password: '1234567', first_name: 'Sarah', last_name: 'Westminster', address: 'street', gender: 'female', host_bio:'Tea time')
 
-Life.create!(description: 'This is a description', img_url: 'https://media.nesta.org.uk/images/Predictions-2019_Twitter_02.width-1200.png', price_per_day: 200, city: 'Berlin', job: 'gardener', family: 'all weird people', relationship: 'paired', hobby: 'dancing', user_id: claire.id)
+valerie = User.create!(email: 'valerie@email.com', password: '1234567', first_name: 'Valerie', last_name: 'Holland', address: 'street', gender: 'female', host_bio:'Code Hero')
 
-Life.create!(description: 'This is a description', img_url: 'http://images2.fanpop.com/image/photos/14300000/Beautiful-Wallpaper-random-14312356-2560-1600.jpg', price_per_day: 150, city: 'Munich', job: 'shark saver', family: 'too many', relationship: 'paired', hobby: 'dancing', user_id: jim.id)
+john = User.create!(email: 'john@email.com', password: '1234567', first_name: 'John', last_name: 'Lemon', address: 'street', gender: 'male', host_bio:'Music is my business')
+
+west = User.create!(email: 'west@email.com', password: '1234567', first_name: 'West', last_name: 'Kanye', address: 'street', gender: 'female', host_bio:'West is cool')
+puts 'finished'
+puts 'creating lives'
+life_1 = Life.new(
+    description: 'This is a description',
+    price_per_day: 100,
+    city: 'New York',
+    job: 'stripper',
+    family: 'all weird people',
+    relationship: 'paired',
+    hobby: 'dancing',
+    user_id: euan.id,
+    img_url: 'https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
+)
+file = URI.open('https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
+life_1.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_1.save
+
+life_2 = Life.new(
+    description: 'This is a description',
+    price_per_day: 100,
+    city: 'New York',
+    job: 'stripper',
+    family: 'all weird people',
+    relationship: 'paired',
+    hobby: 'dancing',
+    user_id: claire.id,
+    img_url: 'https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
+)
+file = URI.open('https://res.cloudinary.com/rentmylife/image/upload/v1614168095/assets/banner_bzvrks.jpg')
+life_2.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_2.save
+
+life_3 = Life.new(
+    description: 'This is a description',
+    price_per_day: 100,
+    city: 'New York',
+    job: 'stripper',
+    family: 'all weird people',
+    relationship: 'paired',
+    hobby: 'dancing',
+    user_id: jim.id,
+    img_url: 'https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
+)
+file = URI.open('https://res.cloudinary.com/rentmylife/image/upload/v1614175713/assets/alexander-dummer-UH-xs-FizTk-unsplash_nfwq6m.jpg')
+life_3.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_3.save
+
+life_4 = Life.new(
+    description: 'This is a description',
+    price_per_day: 100,
+    city: 'New York',
+    job: 'stripper',
+    family: 'all weird people',
+    relationship: 'paired',
+    hobby: 'dancing',
+    user_id: tom.id,
+    img_url: 'https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
+)
+file = URI.open('https://res.cloudinary.com/rentmylife/image/upload/v1614175712/assets/kinga-cichewicz-aHu_xuRvsZ4-unsplash_qhxh3r.jpg')
+life_4.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_4.save
+
+life_5 = Life.new(
+    description: 'This is a description',
+    price_per_day: 100,
+    city: 'New York',
+    job: 'stripper',
+    family: 'all weird people',
+    relationship: 'paired',
+    hobby: 'dancing',
+    user_id: sarah.id,
+    img_url: 'https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
+)
+file = URI.open('https://res.cloudinary.com/rentmylife/image/upload/v1614175710/assets/sai-de-silva-YLMs82LF6FY-unsplash_fhv2s8.jpg')
+life_5.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_5.save
+
+life_6 = Life.new(
+    description: 'This is a description',
+    price_per_day: 100,
+    city: 'New York',
+    job: 'stripper',
+    family: 'all weird people',
+    relationship: 'paired',
+    hobby: 'dancing',
+    user_id: valerie.id,
+    img_url: 'https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
+)
+file = URI.open('https://res.cloudinary.com/rentmylife/image/upload/v1614175707/assets/limor-zellermayer-qHYC8ajXLB0-unsplash_cn3gee.jpg')
+life_6.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_6.save
+
+life_7 = Life.new(
+    description: 'This is a description',
+    price_per_day: 100,
+    city: 'New York',
+    job: 'stripper',
+    family: 'all weird people',
+    relationship: 'paired',
+    hobby: 'dancing',
+    user_id: john.id,
+    img_url: 'https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
+)
+file = URI.open('https://res.cloudinary.com/rentmylife/image/upload/v1614175708/assets/esther-ann-glpYh1cWf0o-unsplash_x8xr93.jpg')
+life_7.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_7.save
+
+life_8 = Life.new(
+    description: 'This is a description',
+    price_per_day: 100,
+    city: 'New York',
+    job: 'stripper',
+    family: 'all weird people',
+    relationship: 'paired',
+    hobby: 'dancing',
+    user_id: west.id,
+    img_url: 'https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
+)
+file = URI.open('https://res.cloudinary.com/rentmylife/image/upload/v1614175306/assets/nathan-dumlao-R4O7S1KoF6I-unsplash_ez77ex.jpg')
+life_8.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_8.save
+
+puts 'finished'

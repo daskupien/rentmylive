@@ -5,6 +5,7 @@ class LivesController < ApplicationController
 
   def show
     @life = Life.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -13,8 +14,9 @@ class LivesController < ApplicationController
 
   def create
     @life = Life.new(life_params)
+    @life.user = current_user
     if @life.save
-      redirect_to live_path(@life)
+      redirect_to life_path(@life)
     else
       render 'new'
     end
@@ -23,6 +25,6 @@ class LivesController < ApplicationController
   private
 
   def life_params
-    params.require(:life).permit(:description, :img_url, :price_per_day, :city, :job, :family, :relationship, :hobby)
+    params.require(:life).permit(:description, :photo, :img_url, :price_per_day, :city, :job, :family, :relationship, :hobby)
   end
 end
