@@ -33,7 +33,10 @@
       <%= f.submit class: "btn btn-normal", placeholder: 'Book now!' %>
     <% end %>
   <br>
-    <%= link_to "Delete", life_path(@life), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: "Are you sure?" } %>
+    <% if @life.user == current_user %>
+      <%= link_to "Delete", life_path(@life), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
+    
   </div>
 </div>
 
