@@ -33,7 +33,9 @@
     </div>
     <br>
     <div>
-      <%= link_to "Cancel", life_path(@life), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: "Are you sure?" } %>
+    <% if @life.user == current_user %>
+      <%= link_to "Cancel", life_path(@life), class: "btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
     </div>
   </div>
 </div>
