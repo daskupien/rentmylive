@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.user = user
     @booking.life = life
     if @booking.save
-      redirect_to life, notice: "Booked!"
+      redirect_to life_path(life), notice: "Booked!"
     else
       render 'new'
     end
@@ -21,7 +21,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    # TODO set this again after demo day
-    # params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
