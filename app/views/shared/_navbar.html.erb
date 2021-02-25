@@ -20,8 +20,9 @@
         <%= link_to "Become Host", new_life_path, class: "nav-link" %>
       </li>
       <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
+        <li class="nav-item" id="avatar-items">
+          <%= link_to image_tag("https://kitt.lewagon.com/placeholder/users/cveneziani"), user_path(current_user), class: "avatar" %>
+          <%= link_to current_user.first_name, user_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
