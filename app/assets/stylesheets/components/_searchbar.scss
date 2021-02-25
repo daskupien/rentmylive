@@ -2,7 +2,7 @@
   padding: 10px 20px 10px 20px;
   background-color: white;
   width: 522px;
-  height: 80px;
+  height: 63px;
   position: absolute;
   border-radius: 69px;
   top: 100px;
@@ -12,31 +12,34 @@
   padding: 5px;
   form {
     padding: 20px;
-    padding-left: 44px;
-    padding-top: 17px;
+    padding-left: 12px;
+    padding-top: 11px;
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
   label {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 600;
     padding-left: 10px;
-    width: 385px;
-    padding-left: 9px;
+    width: 77px;
+    padding-left: 24px;
     margin-bottom: 0;
+    margin-top: 4px;
   }
   input {
     border: none;
     background: transparent;
     outline: none;
-    border-bottom: 1px solid;
     vertical-align: middle;
     width: 397px;
-    margin-left: 6px;
     padding-top: 0;
+    border-left: 1px solid;
   }
   i {
-    font-size: 21px;
+    font-size: 27px;
+    margin: -18px;
+    margin-left: -3px;
+    margin-top: -4px;
   }
 }
