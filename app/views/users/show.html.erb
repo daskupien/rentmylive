@@ -1,11 +1,73 @@
 <div class="container container-users">
-  <h1>Hi <%= @user.first_name %>!</h1>
-  <br>
-    <p>Your Email: <%= @user.email %></p>
-    <p>Your Address: <%= @user.address %></p>
-    <p>Your Age: <%= @user.age %></p>
-    <p>Your Gender: <%= @user.gender %></p>
-    <p>Your Bio: <%= @user.host_bio %></p>
-  <br>
-  <%= link_to "Update Your Profile!", lives_path %>
+  <div id='user-profile'>
+    <div id='user-profile-information'>
+      <h1>Hi <%= @user.first_name %>!</h1>
+      <br>
+        <p><strong>Your Email:</strong> <%= @user.email %></p>
+        <p><strong>Your Address:</strong> <%= @user.address %></p>
+        <p><strong>Your Age:</strong> <%= @user.age %></p>
+        <p><strong>Your Gender:</strong> <%= @user.gender %></p>
+        <p><strong>Your Bio:</strong> <%= @user.host_bio %></p>
+      <br>
+    </div>
+
+    <div id='update-profile'>
+      <%= link_to "Update Your Profile!", lives_path %>
+    </div>
+  </div>
+
+  <div>
+    <div id='my-bookings' class="container-cards">
+      <h2>My Bookings</h2>
+      <% @bookings.each do |booking| %>
+        <div class="card-product">
+          <%= cl_image_tag booking.life.photo.key, crop: :fill %>
+          <div class="card-product-infos">
+            <div class="d-flex justify-content-between w-100">
+              <h2><%= booking.life.user.first_name %>'s life</h2>
+            </div>
+            <div class="d-flex justify-content-between w-100">
+              <p><strong>Job:</strongx> <%= booking.life.job.capitalize %></p>
+              <p><strong>Family:</strong> <%= booking.life.family.capitalize %></p>
+              <p><strong>City:</strong> <%= booking.life.city.capitalize %></p>
+            </div>
+            <div class="d-flex justify-content-between w-100">
+              <p><strong>Bio:</strong> <%= booking.life.description.capitalize %></p>
+              <p><strong>Relationship:</strong> <%= booking.life.relationship.capitalize %></p>
+              <p><strong>Hobby:</strong> <%= booking.life.hobby.capitalize %></p>
+            </div>
+            <div class="d-flex justify-content-between w-100">
+              <p><strong>Price Per Day: </strong><%= booking.life.price_per_day %>€</p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div id='my-lives'>
+    <div class="container-cards">
+      <h2>My Lifes</h2>
+      <% @lives.each do |life| %>
+        <div class="card-product">
+          <%= cl_image_tag life.photo.key, crop: :fill %>
+          <div class="card-product-infos">
+            <div class="d-flex justify-content-between w-100">
+              <p><strong>Job:</strongx> <%= life.job.capitalize %></p>
+              <p><strong>Family:</strong> <%= life.family.capitalize %></p>
+              <p><strong>City:</strong> <%= life.city.capitalize %></p>
+            </div>
+            <div class="d-flex justify-content-between w-100">
+              <p><strong>Bio:</strong> <%= life.description.capitalize %></p>
+              <p><strong>Relationship:</strong> <%= life.relationship.capitalize %></p>
+              <p><strong>Hobby:</strong> <%= life.hobby.capitalize %></p>
+            </div>
+            <div class="d-flex justify-content-between w-100">
+              <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
