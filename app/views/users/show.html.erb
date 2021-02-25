@@ -14,7 +14,16 @@
 
     <%# UPDATE-PROFILE %>
     <div>
-      <%= link_to "Update Your Profile!", lives_path, class: "btn-normal" %>
+      <%= link_to "Edit profile", lives_path, class: "btn-normal" %>
+    </div>
+    <br>
+    <div>
+        <%= simple_form_for current_user, url: lives_path, method: :post do |f| %>
+          <%= f.label "Upload Avatar" %>
+          <br>
+          <%= f.file_field :photo, direct_upload: true %><br><br>
+        <%= f.submit "Update Avatar", class: "btn btn-normal" %>
+  <% end %>
     </div>
   </div>
 
