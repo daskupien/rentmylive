@@ -7,7 +7,20 @@
     </div>
   </div>
 
-  <div class="search-middle row g-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 offset-sm-2">
+        <div id="movies">
+          <% @movies.each do |movie| %>
+            <h4><%= movie.title %></h4>
+            <p><%= movie.synopsis %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="search-middle row g-4">
     <div class="col-sm-3 column-start">
       <label for="input-city" class="form-label">City</label>
       <input type="text" class="form-control" placeholder="Where do you want to go?" id="input-city">
@@ -24,7 +37,9 @@
       <label for="input-specific-wish" class="form-label">Filter</label>
       <input type="text" class="form-control" placeholder="Any specific wishes for your journey?" id="input-specific-wish">
     </div>
-  </div>
+  </div> -->
+
+
   <div class="card-header">
       <h1>This weeks favorite LIFE's:</h1>
   </div>
