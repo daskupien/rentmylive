@@ -29,6 +29,7 @@
       <%# TODO calculate price by day difference after demo day %>
       <%# <%= f.input :start_date %>
       <%# <%= f.input :end_date %>
+      <%= link_to "Delete", life_path(f), class: "btn btn-danger btn-xs", method: :delete  %>
       <%= f.submit class: "btn btn-normal", placeholder: 'Book now!' %>
     <% end %>
   </div>
