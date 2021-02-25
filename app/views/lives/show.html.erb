@@ -22,20 +22,21 @@
   <br>
   <br>
   <div class="container">
-    <div class="form-wrapper" style="width: 400px;">
-      <h2>Book this life</h2>
-      <%# TODO somehow the start_date lines with be dublicated when clicked on back in browser %>
-      <%= simple_form_for [@life, @booking], url: life_bookings_path(@life), method: "post" do |f| %>
-        <p>Cost: <%= @life.price_per_day %> € / day</p>
-        <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
-        <%= f.input :end_date, as: :string, required: false, input_html: {id: "range_end"} %>
-        <%= f.submit class: "btn btn-normal", placeholder: 'Book now!' %>
-      <% end %>
-    </div>
-    <br>
+    <% if @life.user != current_user %>
+      <div class="form-wrapper" style="width: 400px;">
+        <h2>Book this life</h2>
+        <%# TODO somehow the start_date lines with be dublicated when clicked on back in browser %>
+        <%= simple_form_for [@life, @booking], url: life_bookings_path(@life), method: "post" do |f| %>
+          <p>Cost: <%= @life.price_per_day %> € / day</p>
+          <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
+          <%= f.input :end_date, as: :string, required: false, input_html: {id: "range_end"} %>
+          <%= f.submit class: "btn btn-normal", placeholder: 'Book now!' %>
+        <% end %>
+      </div>
+    <% end %>
     <div>
       <% if @life.user == current_user %>
-        <%= link_to "Cancel", life_path(@life), class: "btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to "Cancel my offer", life_path(@life), class: "btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
       <% end %>
     </div>
   </div>
