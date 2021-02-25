@@ -1,8 +1,9 @@
  <div class="container-home">
   <div class="banner">
-    <div class="container">
+    <div class="container container-banner">
       <h1>What is your Dream LIFE? find out!</h1>
-      <%= link_to "Book your first LIVE now!", lives_path %>
+      <!-- <p>Change your life and learn to code at one of our campuses around the world.</p> -->
+      <%= link_to "Book your first LIVE now!", lives_path, class: "btn-large" %>
 
       <div class="searchbar">
         <%= form_tag lives_path, method: :get do %>
