@@ -8,11 +8,12 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)  # strong params
     life = Life.find(params[:life_id])
-    user = current_user
-    @booking.user = user
+    @booking.user = current_user
     @booking.life = life
+    total_price = (@booking.end_date - @booking.start_date) * life.price_per_day
+    @booking.total_price = total_price
     if @booking.save
-      redirect_to life_path(life), notice: "Booked!"
+      redirect_to user_path(current_user), notice: "Booked!"
     else
       render 'new'
     end
