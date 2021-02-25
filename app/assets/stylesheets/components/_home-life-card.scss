@@ -10,8 +10,10 @@
   padding: 50px;
   font-weight: bold;
   border-bottom: 0;
-  margin-top: 10px;
+  margin-top: 34px;
+  padding-bottom: 29px;
   background: white;
+  margin-left: 52px;
 }
 
 .card-life {
@@ -21,16 +23,22 @@
   border-radius: 15px;
   img {
     width: 260px;
+    height: 189px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+    margin-bottom: 5px;
+    object-fit: cover;
   }
 }
 
 .card-content {
   padding: 20px;
   padding-top: 30px;
+  p {
+    height: 38px;
+  }
 }
 
 .card-title {
