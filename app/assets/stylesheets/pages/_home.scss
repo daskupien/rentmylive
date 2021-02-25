@@ -4,26 +4,4 @@
 @import '../components/home-searchbar-middle';
 @import '../components/home-life-card';
 @import '../components/searchbar';
-.container {
-  margin-left: 60px;
-  padding-bottom: 60px;
-}
-
-.container a {
-  color: white;
-  font-size: 17px;
-  padding: 15px 80px;
-  border-radius: 19px;
-  font-weight: light;
-  background: #FF385C;
-  transition: background 0.3s ease;
-  &:hover {
-    background: #fc7693;
-    color: white;
-    text-decoration: none;
-  }
-}
-
-.card {
-  padding-bottom: 50px;
-}
+@import '../components/button';
