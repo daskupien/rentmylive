@@ -3,37 +3,33 @@
 
   <div class="container-cards">
     <% @lives.each do |life| %>
-      <div class="card-product">
+
+
+      <div class="card-lives-all">
         <%= cl_image_tag life.photo.key, crop: :fill %>
-        <div class="card-product-infos">
-          <div class="d-flex justify-content-between w-100">
-            <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
-          </div>
-          <div class="d-flex justify-content-between w-100">
-            <p><strong>Job:</strong> <%= life.job.capitalize %></p>
-            <p><strong>Family:</strong> <%= life.family.capitalize %></p>
-            <p><strong>City:</strong> <%= life.city.capitalize %></p>
-          </div>
-          <div class="d-flex justify-content-between w-100">
-            <p><strong>Bio:</strong> <%= life.description.capitalize %></p>
-            <p><strong>Relationship:</strong> <%= life.relationship.capitalize %></p>
-            <p><strong>Hobby:</strong> <%= life.hobby.capitalize %></p>
-          </div>
-          <div class="d-flex justify-content-between w-100">
-            <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
-          </div>
-          <br>
+        <div class="card-lives-content">
+          <p><%= life.user.first_name %> <%= life.user.last_name %></p>
+          <p><%= life.description.capitalize %></p>
+          <p><strong>Job:</strong> <%= life.job.capitalize %></p>
+          <p><strong>Family:</strong> <%= life.family.capitalize %></p>
+          <p><strong>City:</strong> <%= life.city.capitalize %></p>
+          <p><strong>Bio:</strong> <%= life.description.capitalize %></p>
+          <p><strong>Relationship:</strong> <%= life.relationship.capitalize %></p>
+          <p><strong>Hobby:</strong> <%= life.hobby.capitalize %></p>
+          <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
+        </div>
+
           <% if life.user != current_user %>
-            <div class="d-flex justify-content-end">
+            <div>
               <%= link_to "Book now", life_path(life), {:class => "btn btn-normal"} %>
             </div>
           <% else %>
-            <div class="d-flex justify-content-end">
+            <div>
               <%= link_to "Show my offer", life_path(life), {:class => "btn btn-normal"} %>
             </div>
           <% end %>
         </div>
-      </div>
     <% end %>
+  </div>
   </div>
 </div>
