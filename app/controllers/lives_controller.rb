@@ -1,6 +1,10 @@
 class LivesController < ApplicationController
-  def index
-    @lives = Life.all
+  def index 
+    if params[:query].present?
+      @lives = Life.where("city ILIKE ?", "%#{params[:query]}%")
+    else
+      @lives = Life.all
+    end
   end
 
   def show
