@@ -1,0 +1,31 @@
+.searchbar {
+  padding: 10px 20px 10px 20px;
+  background-color: white;
+  width: 600px;
+  position: absolute;
+  border-radius: 69px;
+  top: 100px;
+  right: 572px;
+  padding: 5px;
+  form {
+    padding: 20px;
+    padding-left: 44px;
+  }
+  label {
+    font-size: 19px;
+    font-weight: 600;
+    padding-left: 10px;
+    width: 494px;
+    padding-left: 9px;
+    margin-bottom: 0;
+  }
+  input {
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid;
+    vertical-align: middle;
+    width: 450px;
+    margin-left: 6px;
+  }
+}

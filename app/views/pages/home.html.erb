@@ -4,18 +4,16 @@
       <h1>What is your Dream LIFE? find out!</h1>
       <!-- <p>Change your life and learn to code at one of our campuses around the world.</p> -->
       <%= link_to "Book your first LIVE now!", lives_path %>
-    </div>
-  </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 offset-sm-2">
-        <div id="movies">
-          <% @movies.each do |movie| %>
-            <h4><%= movie.title %></h4>
-            <p><%= movie.synopsis %></p>
-          <% end %>
-        </div>
+      <div class="searchbar">
+        <%= form_tag lives_path, method: :get do %>
+          <%= label_tag "City"  %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find your new life in your favorite location!"
+          %>
+        <% end %>
       </div>
     </div>
   </div>
