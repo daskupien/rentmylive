@@ -74,7 +74,7 @@
                 </div>
                 <%# TODO not functional %>
                 <div>
-                  <%= link_to "Cancel", booking_path(booking), class: "btn-move btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
+                  <%= link_to "Cancel", booking_path(booking), class: "btn btn-normal mr-3", method: :delete, data: { confirm: "Are you sure?" } %>
                 </div>
               </div>
             </div>
@@ -138,10 +138,8 @@
                 <%# accept is functional %>
                 <div>
                   <%= link_to "Accept", confirm_path(booking), class: "btn btn-green", method: :patch, data: { confirm: "Are you sure?" } %>
-                </div>
-                <%# TODO not functional %>
-                <div>
-                  <%= link_to "Reject", reject_path(booking), class: "btn btn-normal", method: :patch, data: { confirm: "Are you sure?" } %>
+
+                  <%= link_to "Reject", reject_path(booking), class: "btn btn-normal mr-3", method: :patch, data: { confirm: "Are you sure?" } %>
                 </div>
               </div>
             </div>
@@ -175,7 +173,7 @@
                 </div>
                 <%# TODO not functional %>
                 <div>
-                  <%= link_to "Cancel", reject_path(booking), class: "btn btn-normal", method: :patch, data: { confirm: "Are you sure?" } %>
+                  <%= link_to "Cancel", reject_path(booking), class: "btn btn-normal mr-3", method: :patch, data: { confirm: "Are you sure?" } %>
                 </div>
               </div>
             </div>
