@@ -3,7 +3,7 @@
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: light;
-  background: #FF385C;
+  background: #ff385c;
   transition: background 0.3s ease;
 }
 
@@ -18,7 +18,7 @@
   padding: 12px 48px;
   border-radius: 4px;
   font-weight: light;
-  background: #FF385C;
+  background: #ff385c;
   transition: background 0.3s ease;
 }
 
@@ -39,4 +39,10 @@
   font-weight: light;
   background: green;
   transition: background 0.3s ease;
+}
+
+.btn-green:hover {
+  background: #89b890;
+  color: white;
+  text-decoration: none;
 }

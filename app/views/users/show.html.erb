@@ -35,9 +35,9 @@
                 <%= cl_image_tag booking.life.photo.key, crop: :fill %>
                 <div class="card-product-infos">
                   <h2><%= booking.life.user.first_name %> <%= booking.life.user.last_name %></h2>
-                  <p><strong>Job:</strong> <%= booking.life.job.capitalize %></p>
-                  <p><strong>Family:</strong> <%= booking.life.family.capitalize %></p>
-                  <p><strong>City:</strong> <%= booking.life.city.capitalize %></p>
+                  <p><strong>Job:</strong> <%= booking.life.job %></p>
+                  <p><strong>Family:</strong> <%= booking.life.family %></p>
+                  <p><strong>City:</strong> <%= booking.life.city %></p>
                   <p><strong>Total price: </strong><%= booking.total_price %> €</p>
                 </div>
               </div>
@@ -62,17 +62,21 @@
       <% @bookings.each do |booking| %>
         <% if booking.confirmed == 'confirmed' %>
           <div class="card-product">
-            <%= cl_image_tag booking.life.photo.key, crop: :fill %>
-            <div class="card-product-infos">
-              <h2><%= booking.life.user.first_name %> <%= booking.life.user.last_name %></h2>
-              <p><strong>Job:</strong> <%= booking.life.job.capitalize %></p>
-              <p><strong>Family:</strong> <%= booking.life.family.capitalize %></p>
-              <p><strong>City:</strong> <%= booking.life.city.capitalize %></p>
-              <p><strong>Total price: </strong><%= booking.total_price %> €</p>
-            </div>
-            <%# TODO not functional %>
-            <div>
-              <%= link_to "Cancel", booking_path(booking), class: "btn-move btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
+            <div class="d-flex justify-content-between w-100 align-items-center">
+              <div class="d-flex justify-content-start">
+                <%= cl_image_tag booking.life.photo.key, crop: :fill %>
+                <div class="card-product-infos">
+                  <h2><%= booking.life.user.first_name %> <%= booking.life.user.last_name %></h2>
+                  <p><strong>Job:</strong> <%= booking.life.job %></p>
+                  <p><strong>Family:</strong> <%= booking.life.family %></p>
+                  <p><strong>City:</strong> <%= booking.life.city %></p>
+                  <p><strong>Total price: </strong><%= booking.total_price %> €</p>
+                </div>
+                <%# TODO not functional %>
+                <div>
+                  <%= link_to "Cancel", booking_path(booking), class: "btn btn-normal mr-3", method: :delete, data: { confirm: "Are you sure?" } %>
+                </div>
+              </div>
             </div>
           </div>
         <% end %>
@@ -94,9 +98,9 @@
               <%= cl_image_tag life.photo.key, crop: :fill %>
               <div class="card-product-infos">
                 <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
-                <p><strong>Job:</strong> <%= life.job.capitalize %></p>
-                <p><strong>Family:</strong> <%= life.family.capitalize %></p>
-                <p><strong>City:</strong> <%= life.city.capitalize %></p>
+                <p><strong>Job:</strong> <%= life.job %></p>
+                <p><strong>Family:</strong> <%= life.family %></p>
+                <p><strong>City:</strong> <%= life.city %></p>
                 <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
               </div>
             </div>
@@ -120,21 +124,23 @@
         <% life.bookings.each do |booking| %>
           <% if booking.confirmed == 'pending' %>
             <div class="card-product">
-              <%= cl_image_tag life.photo.key, crop: :fill %>
-              <div class="card-product-infos">
-                <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
-                <p><strong>Job:</strong> <%= life.job.capitalize %></p>
-                <p><strong>Family:</strong> <%= life.family.capitalize %></p>
-                <p><strong>City:</strong> <%= life.city.capitalize %></p>
-                <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
-              </div>
-              <%# accept is functional %>
-              <div>
-                <%= link_to "Accept", confirm_path(booking), class: "btn btn-normal", method: :patch, data: { confirm: "Are you sure?" } %>
-              </div>
-              <%# TODO not functional %>
-              <div>
-                <%= link_to "Reject", reject_path(booking), class: "btn btn-normal", method: :patch, data: { confirm: "Are you sure?" } %>
+              <div class="d-flex justify-content-between w-100 align-items-center">
+                <div class="d-flex justify-content-start">
+                <%= cl_image_tag life.photo.key, crop: :fill %>
+                  <div class="card-product-infos">
+                    <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
+                    <p><strong>Job:</strong> <%= life.job %></p>
+                    <p><strong>Family:</strong> <%= life.family %></p>
+                    <p><strong>City:</strong> <%= life.city %></p>
+                    <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
+                  </div>
+                </div>
+                <%# accept is functional %>
+                <div>
+                  <%= link_to "Accept", confirm_path(booking), class: "btn btn-green", method: :patch, data: { confirm: "Are you sure?" } %>
+
+                  <%= link_to "Reject", reject_path(booking), class: "btn btn-normal mr-3", method: :patch, data: { confirm: "Are you sure?" } %>
+                </div>
               </div>
             </div>
           <% end %>
@@ -154,17 +160,21 @@
         <% life.bookings.each do |booking| %>
           <% if booking.confirmed == 'confirmed' %>
             <div class="card-product">
-              <%= cl_image_tag life.photo.key, crop: :fill %>
-              <div class="card-product-infos">
-                <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
-                <p><strong>Job:</strong> <%= life.job.capitalize %></p>
-                <p><strong>Family:</strong> <%= life.family.capitalize %></p>
-                <p><strong>City:</strong> <%= life.city.capitalize %></p>
-                <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
-              </div>
-              <%# TODO not functional %>
-              <div>
-                <%= link_to "Cancel", reject_path(booking), class: "btn btn-normal", method: :patch, data: { confirm: "Are you sure?" } %>
+              <div class="d-flex justify-content-between w-100 align-items-center">
+                <div class="d-flex justify-content-start">
+                <%= cl_image_tag life.photo.key, crop: :fill %>
+                  <div class="card-product-infos">
+                    <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
+                    <p><strong>Job:</strong> <%= life.job %></p>
+                    <p><strong>Family:</strong> <%= life.family %></p>
+                    <p><strong>City:</strong> <%= life.city %></p>
+                    <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
+                  </div>
+                </div>
+                <%# TODO not functional %>
+                <div>
+                  <%= link_to "Cancel", reject_path(booking), class: "btn btn-normal mr-3", method: :patch, data: { confirm: "Are you sure?" } %>
+                </div>
               </div>
             </div>
           <% end %>

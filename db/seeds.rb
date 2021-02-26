@@ -60,20 +60,20 @@ file = URI.open('http://drive.google.com/uc?export=view&id=10Tiw0AIcT2z_2c5G2fwx
 life_2.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 life_2.save
 
-life_3 = Life.new(
-    description: 'Если ты даты любишь и это для тебя удовольствие мучить себя для студентов,ты точно совершенно со мной.',
-    price_per_day: 5000,
-    city: 'Unknown',
-    job: 'I manage all data, I mean ALL of it!',
-    family: 'Wife and kids in the background',
-    relationship: 'deep connection to red bull',
-    hobby: 'Juggling with data and changing outfits frequently',
-    user_id: andy.id,
-    img_url: 'http://drive.google.com/uc?export=view&id=1qAF9KtA0gZo_4lAe6kanCQcv_-53HeEC'
-)
-file = URI.open('http://drive.google.com/uc?export=view&id=1qAF9KtA0gZo_4lAe6kanCQcv_-53HeEC')
-life_3.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
-life_3.save
+# life_3 = Life.new(
+#     description: 'Если ты даты любишь и это для тебя удовольствие мучить себя для студентов,ты точно совершенно со мной.',
+#     price_per_day: 5000,
+#     city: 'Unknown',
+#     job: 'I manage all data, I mean ALL of it!',
+#     family: 'Wife and kids in the background',
+#     relationship: 'deep connection to red bull',
+#     hobby: 'Juggling with data and changing outfits frequently',
+#     user_id: andy.id,
+#     img_url: 'http://drive.google.com/uc?export=view&id=1qAF9KtA0gZo_4lAe6kanCQcv_-53HeEC'
+# )
+# file = URI.open('http://drive.google.com/uc?export=view&id=1qAF9KtA0gZo_4lAe6kanCQcv_-53HeEC')
+# life_3.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+# life_3.save
 
 life_7 = Life.new(
     description: 'When you book my life, you will learn a lot of French. You do not have a chance to not to, since my browser will only display French language.',
