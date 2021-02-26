@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
 
   def confirm_booking
     # should, because we have booking from iteration
-    @booking = Booking.find(params[:user_id])
+    @booking = Booking.find(params[:id])
     @booking.confirmed = 'confirmed'
     if @booking.save
       redirect_to user_path(current_user)
@@ -39,6 +39,12 @@ class BookingsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to user_path(current_user)
   end
 
   private

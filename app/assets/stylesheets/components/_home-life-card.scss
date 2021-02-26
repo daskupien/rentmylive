@@ -19,8 +19,9 @@
 }
 
 .card-life {
+  padding-top: 10px;
   width: 300px;
-  height: 500px;
+  height: 582px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 15px;
   img {
@@ -38,8 +39,11 @@
 .card-content {
   padding: 20px;
   padding-top: 30px;
-  p {
-    height: 130px;
+  .city {
+    height: 45px;
+  }
+  .info {
+    height: 145px;
   }
 }
 

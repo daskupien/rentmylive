@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="card-header">
-    <h1>Your top lives</h1>
+    <h1><strong>Our top lives</strong></h1>
     <h4>Get inspired and book your next life</h4>
     <%# <h1><strong>Inspiration for future LIFE</strong></h1> %>
     <%# <h4>Lives to book with your upcoming experience</h4> %>
@@ -33,9 +33,12 @@
             <%= life.user.first_name %> <%= life.user.last_name %>
           </h5>
           <p class="card-text">
-            <strong>City:</strong> <%= life.city.capitalize %>
-            <br>
-            Info: <%= life.description.capitalize %>
+            <p class="city">
+              <strong>City:</strong> <%= life.city.capitalize %>
+            </p>
+            <p class="info">
+              <strong>Info:</strong> <%= life.description.capitalize %>
+            </p>
           </p>
           <%= link_to "Book now", life_path(life), {:class => "btn btn-normal"} %>
         </div>
