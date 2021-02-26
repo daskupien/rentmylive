@@ -4,6 +4,12 @@
   background-color: white;
 }
 
+.container-narrow {
+  padding: 60px 80px 30px 80px;
+  margin: 20px 180px 0px 180px;
+  background-color: white;
+}
+
 .container-general {
   h1 {
     text-align: center;
@@ -11,4 +17,21 @@
   h3 {
     text-align: center;
   }
+}
+
+.container-narrow {
+  h1 {
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+  }
+}
+
+.container-home {
+  background: #ffffff;
+}
+
+.container-profile {
+  margin-bottom: 60px;
 }
