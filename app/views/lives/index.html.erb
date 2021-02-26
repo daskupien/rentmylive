@@ -9,16 +9,12 @@
           <p class="text-center"><strong><%= life.user.first_name %> <%= life.user.last_name %></strong></p>
           <p><strong>City:</strong> <%= life.city.capitalize %></p>
           <p><strong>Info:</strong> <%= life.description.capitalize %></p>
-          <p><strong>Job:</strong> <%= life.job.capitalize %></p>
-          <p><strong>Family:</strong> <%= life.family.capitalize %></p>
-          <p><strong>Relationship:</strong> <%= life.relationship.capitalize %></p>
-          <p><strong>Hobby:</strong> <%= life.hobby.capitalize %></p>
           <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
         </div>
         <div class="card-lives-button">
           <% if life.user != current_user %>
             <div>
-              <%= link_to "Book now", life_path(life), class: "btn btn-normal" %>
+              <%= link_to "View details", life_path(life), class: "btn btn-normal" %>
             </div>
           <% else %>
             <div>

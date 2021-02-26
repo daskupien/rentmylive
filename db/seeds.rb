@@ -18,7 +18,7 @@ valerie = User.create!(email: 'valerie@lewagon.com', password: '1234567', first_
 
 andy = User.create!(email: 'andy@lewagon.com', password: '1234567', first_name: 'Andy', last_name: 'Baranov', address: '********** (top secret)', gender: 'male', host_bio:'data')
 
-leon = User.create!(email: 'leon@lewagon.com', password: '1234567', first_name: 'Leon', last_name: 'Riddle', address: 'Berlin somewhere', gender: 'male', host_bio:'I love Harry Potter')
+leon = User.create!(email: 'leon@lewagon.com', password: '1234567', first_name: 'Leon', last_name: 'Entrup', address: 'Berlin somewhere', gender: 'male', host_bio:'I love Harry Potter')
 
 sarah = User.create!(email: 'sarah@lewagon.com', password: '1234567', first_name: 'Sarah', last_name: 'O’Grady', address: 'Central London', gender: 'female', host_bio:'Tea time')
 
@@ -36,7 +36,7 @@ life_1 = Life.new(
     city: 'Berlin',
     job: 'Head Teacher (often found downstairs)',
     family: 'Allll my students',
-    relationship: 'In love with the big spider in my room',
+    relationship: 'In love with the big spider iqn my room',
     hobby: 'jajajajajaja',
     user_id: santi.id,
     img_url: 'http://drive.google.com/uc?export=view&id=1dLXhLNcBVxUhcj0LMAqGVIwaV6FtIxIC'

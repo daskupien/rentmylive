@@ -9,7 +9,7 @@
       <%= cl_image_tag @life.photo.key, width: 250, height: 300, crop: :fill %>
     </div>
     <div class="text-lives">
-      <p><strong>Descirption:</strong> <%= @life.description %></p>
+      <p><strong>Info:</strong> <%= @life.description %></p>
       <p><strong>City:</strong> <%= @life.city %></p>
       <p><strong>Job:</strong> <%= @life.job %></p>
       <p><strong>Family:</strong> <%= @life.family %></p>
@@ -21,12 +21,12 @@
   <br>
   <br>
   <br>
-  
+
   <% if @life.user != current_user %>
     <div class="content d-flex">
       <div class="form-wrapper" style="width: 400px;">
         <h2>Book this life</h2>
-        <%# TODO somehow the start_date lines with be dublicated when clicked on back in browser %>
+        <%# TODO somehow the start_date lines will be dublicated when clicked on go-back in browser %>
         <%= simple_form_for [@life, @booking], url: life_bookings_path(@life), method: "post" do |f| %>
           <p>Cost: <%= @life.price_per_day %> € / day</p>
           <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
@@ -37,6 +37,6 @@
     </div>
   <% else %>
     <%= link_to "Cancel my offer", life_path(@life), class: "btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
-  <% end %> 
+  <% end %>
 </div>
 
