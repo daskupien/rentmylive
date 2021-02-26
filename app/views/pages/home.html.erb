@@ -33,7 +33,9 @@
             <%= life.user.first_name %> <%= life.user.last_name %>
           </h5>
           <p class="card-text">
-            <%= life.description.capitalize %>
+            <strong>City:</strong> <%= life.city.capitalize %>
+            <br>
+            Info: <%= life.description.capitalize %>
           </p>
           <%= link_to "Book now", life_path(life), {:class => "btn btn-normal"} %>
         </div>
