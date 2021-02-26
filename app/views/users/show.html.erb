@@ -125,7 +125,7 @@
           <% if booking.confirmed == 'pending' %>
             <div class="card-product">
               <div class="d-flex justify-content-between w-100 align-items-center">
-                <di class="d-flex justify-content-start">
+                <div class="d-flex justify-content-start">
                 <%= cl_image_tag life.photo.key, crop: :fill %>
                   <div class="card-product-infos">
                     <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
@@ -137,7 +137,7 @@
                 </div>
                 <%# accept is functional %>
                 <div>
-                  <%= link_to "Accept", confirm_path(booking), class: "btn btn-normal", method: :patch, data: { confirm: "Are you sure?" } %>
+                  <%= link_to "Accept", confirm_path(booking), class: "btn btn-green", method: :patch, data: { confirm: "Are you sure?" } %>
                 </div>
                 <%# TODO not functional %>
                 <div>
