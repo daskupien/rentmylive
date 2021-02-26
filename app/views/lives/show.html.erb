@@ -7,7 +7,7 @@
     <div class="image text-center">
       <%= cl_image_tag @life.photo.key, width: 250, height: 300, crop: :fill %>
     </div>
-    <div class="text-life text-center">
+    <div class="text-life">
       <p><strong>Name: </strong><%= @life.user.first_name %> <%= @life.user.last_name %></p>
       <p><strong>City:</strong> <%= @life.city %></p>
       <p><strong>Info:</strong> <%= @life.description %></p>
