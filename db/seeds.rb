@@ -36,7 +36,7 @@ life_1 = Life.new(
     city: 'Berlin',
     job: 'Head Teacher (often found downstairs)',
     family: 'Allll my students',
-    relationship: 'In love with the big spider in my room',
+    relationship: 'In love with the big spider iqn my room',
     hobby: 'jajajajajaja',
     user_id: santi.id,
     img_url: 'http://drive.google.com/uc?export=view&id=1dLXhLNcBVxUhcj0LMAqGVIwaV6FtIxIC'
@@ -75,21 +75,6 @@ file = URI.open('http://drive.google.com/uc?export=view&id=1qAF9KtA0gZo_4lAe6kan
 life_3.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 life_3.save
 
-life_5 = Life.new(
-    description: 'Dear Sir or Madam. My life will teach you the benefits of elite etiquette. Moreover, you will rule over England. Sincerely, the Queen',
-    price_per_day: 400,
-    city: 'London',
-    job: 'Monarch',
-    family: 'Blue Bloods',
-    relationship: 'The prince',
-    hobby: 'Watch my subordinates',
-    user_id: sarah.id,
-    img_url: 'http://drive.google.com/uc?export=view&id=1fhaBbnCCbZqBRBjbQNtlU-Vb0Zy6eGY8'
-)
-file = URI.open('http://drive.google.com/uc?export=view&id=1fhaBbnCCbZqBRBjbQNtlU-Vb0Zy6eGY8')
-life_5.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
-life_5.save
-
 life_7 = Life.new(
     description: 'When you book my life, you will learn a lot of French. You do not have a chance to not to, since my browser will only display French language.',
     price_per_day: 225,
@@ -104,6 +89,21 @@ life_7 = Life.new(
 file = URI.open('http://drive.google.com/uc?export=view&id=1ESzDmQ3etW7pYWwH9IOnZzLuJ2A38Tym')
 life_7.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 life_7.save
+
+life_5 = Life.new(
+    description: 'Dear Sir or Madam. My life will teach you the benefits of elite etiquette. Moreover, you will rule over England. Sincerely, the Queen',
+    price_per_day: 400,
+    city: 'London',
+    job: 'Monarch',
+    family: 'Blue Bloods',
+    relationship: 'The king',
+    hobby: 'Watch my subordinates',
+    user_id: sarah.id,
+    img_url: 'http://drive.google.com/uc?export=view&id=1fhaBbnCCbZqBRBjbQNtlU-Vb0Zy6eGY8'
+)
+file = URI.open('http://drive.google.com/uc?export=view&id=1fhaBbnCCbZqBRBjbQNtlU-Vb0Zy6eGY8')
+life_5.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_5.save
 
 life_8 = Life.new(
     description: "Experience a life where you will be able to sneak into everyone's code. I will be everywhere. I mean EVERYWHERE!",
