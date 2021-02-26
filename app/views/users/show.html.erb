@@ -21,43 +21,135 @@
     </div>
   </div>
 
-  <%# MY-BOOKINGS %>
+  <%# PENDING BOOKINGS %>
   <div class="container-profile">
-    <h2>My Bookings</h2>
+    <h2>Pending Bookings</h2>
     <br>
-    <% @bookings.each do |booking| %>
-      <div class="card-product">
-        <%= cl_image_tag booking.life.photo.key, crop: :fill %>
-        <div class="card-product-infos">
-          <h2><%= booking.life.user.first_name %> <%= booking.life.user.last_name %></h2>
-          <p><strong>Job:</strong> <%= booking.life.job.capitalize %></p>
-          <p><strong>Family:</strong> <%= booking.life.family.capitalize %></p>
-          <p><strong>City:</strong> <%= booking.life.city.capitalize %></p>
-          <p><strong>Total price: </strong><%= booking.total_price %> €</p>
-        </div>
-      </div>
+    <% if @bookings.empty? %>
+      <p>No pending lifes</p>
+    <% else %>
+      <% @bookings.each do |booking| %>
+        <% if booking.confirmed == 'pending' %>
+          <div class="card-product">
+            <%= cl_image_tag booking.life.photo.key, crop: :fill %>
+            <div class="card-product-infos">
+              <h2><%= booking.life.user.first_name %> <%= booking.life.user.last_name %></h2>
+              <p><strong>Job:</strong> <%= booking.life.job.capitalize %></p>
+              <p><strong>Family:</strong> <%= booking.life.family.capitalize %></p>
+              <p><strong>City:</strong> <%= booking.life.city.capitalize %></p>
+              <p><strong>Total price: </strong><%= booking.total_price %> €</p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+
+  <%# REAL MY-BOOKINGS %>
+  <div class="container-profile">
+    <h2>Confirmed Bookings</h2>
+    <br>
+    <% if @bookings.empty? %>
+      <p>No booked lifes</p>
+    <% else %>
+      <% @bookings.each do |booking| %>
+        <% if booking.confirmed == 'confirmed' %>
+          <div class="card-product">
+            <%= cl_image_tag booking.life.photo.key, crop: :fill %>
+            <div class="card-product-infos">
+              <h2><%= booking.life.user.first_name %> <%= booking.life.user.last_name %></h2>
+              <p><strong>Job:</strong> <%= booking.life.job.capitalize %></p>
+              <p><strong>Family:</strong> <%= booking.life.family.capitalize %></p>
+              <p><strong>City:</strong> <%= booking.life.city.capitalize %></p>
+              <p><strong>Total price: </strong><%= booking.total_price %> €</p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+
+  <%# Pending Bookings of my life %>
+  <div class="container-profile">
+    <h2>Pending bookings of my Life</h2>
+    <br>
+    <% if @bookings.empty? %>
+      <p>No pending lifes</p>
+    <% else %>
+      <% @lives.each do |life| %>
+        <% life.bookings.each do |booking| %>
+          <% if booking.confirmed == 'pending' %>
+            <div class="card-product">
+              <%= cl_image_tag life.photo.key, crop: :fill %>
+              <div class="card-product-infos">
+                <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
+                <p><strong>Job:</strong> <%= life.job.capitalize %></p>
+                <p><strong>Family:</strong> <%= life.family.capitalize %></p>
+                <p><strong>City:</strong> <%= life.city.capitalize %></p>
+                <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
+              </div>
+              <div>
+                <%= link_to "Accept booking", user_confirm_path(booking), class: "btn btn-normal", method: :patch, data: { confirm: "Are you sure?" } %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%# Booked Bookings of my life %>
+  <div class="container-profile">
+    <h2>The bookings of our Life</h2>
+    <br>
+    <% if @bookings.empty? %>
+      <p>No bookings so far</p>
+    <% else %>
+      <% @lives.each do |life| %>
+        <% life.bookings.each do |booking| %>
+          <% if booking.confirmed == 'confirmed' %>
+            <div class="card-product">
+              <%= cl_image_tag life.photo.key, crop: :fill %>
+              <div class="card-product-infos">
+                <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
+                <p><strong>Job:</strong> <%= life.job.capitalize %></p>
+                <p><strong>Family:</strong> <%= life.family.capitalize %></p>
+                <p><strong>City:</strong> <%= life.city.capitalize %></p>
+                <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
+              </div>
+              <%# TODO add cancel button %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 
   <%# MY-LIVES %>
 
   <div class="container-profile">
-    <h2>My Lives</h2>
+    <h2>My Life</h2>
     <br>
-    <% @lives.each do |life| %>
-      <div class="card-product">
-        <%= cl_image_tag life.photo.key, crop: :fill %>
-        <div class="card-product-infos">
-          <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
-          <p><strong>Job:</strong> <%= life.job.capitalize %></p>
-          <p><strong>Family:</strong> <%= life.family.capitalize %></p>
-          <p><strong>City:</strong> <%= life.city.capitalize %></p>
-          <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
+    <% if @lives.empty? %>
+      <p>No life. Go and create your first one! The button is in the navbar :)</p>
+    <% else %>
+      <% @lives.each do |life| %>
+        <div class="card-product">
+          <%= cl_image_tag life.photo.key, crop: :fill %>
+          <div class="card-product-infos">
+            <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
+            <p><strong>Job:</strong> <%= life.job.capitalize %></p>
+            <p><strong>Family:</strong> <%= life.family.capitalize %></p>
+            <p><strong>City:</strong> <%= life.city.capitalize %></p>
+            <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
+          </div>
+          <div>
+            <%= link_to "Cancel my offer", life_path(life), class: "btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
+          </div>
         </div>
-        <div>
-          <%= link_to "Cancel my offer", life_path(life), class: "btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
-        </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>

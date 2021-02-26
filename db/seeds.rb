@@ -36,7 +36,7 @@ life_1 = Life.new(
     city: 'Berlin',
     job: 'Head Teacher (often found downstairs)',
     family: 'Allll my students',
-    relationship: 'In love with the big spider iqn my room',
+    relationship: 'In love with the big spider in my room',
     hobby: 'jajajajajaja',
     user_id: santi.id,
     img_url: 'http://drive.google.com/uc?export=view&id=1dLXhLNcBVxUhcj0LMAqGVIwaV6FtIxIC'
@@ -81,7 +81,7 @@ life_5 = Life.new(
     city: 'London',
     job: 'Monarch',
     family: 'Blue Bloods',
-    relationship: 'The king',
+    relationship: 'The prince',
     hobby: 'Watch my subordinates',
     user_id: sarah.id,
     img_url: 'http://drive.google.com/uc?export=view&id=1fhaBbnCCbZqBRBjbQNtlU-Vb0Zy6eGY8'
