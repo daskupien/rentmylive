@@ -23,7 +23,7 @@
   <div class="container-profile">
     <h2>Pending Bookings</h2>
     <br>
-    <% if @bookings.empty? %>
+    <% if @bookings.where(confirmed: 'pending').empty? %>
       <p>No pending lifes</p>
     <% else %>
       <% @bookings.each do |booking| %>
@@ -39,7 +39,7 @@
             </div>
             <%# TODO not functional %>
             <div>
-              <%= link_to "Cancel", user_reject_path(booking), class: "btn btn-normal", method: :patch, data: { confirm: "Are you sure?" } %>
+              <%= link_to "Cancel", booking_path(booking), class: "btn-move btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
             </div>
           </div>
         <% end %>
@@ -52,7 +52,7 @@
   <div class="container-profile">
     <h2>Confirmed Bookings</h2>
     <br>
-    <% if @bookings.empty? %>
+    <% if @bookings.where(confirmed: 'confirmed').empty? %>
       <p>No booked lifes</p>
     <% else %>
       <% @bookings.each do |booking| %>
@@ -68,7 +68,7 @@
             </div>
             <%# TODO not functional %>
             <div>
-              <%= link_to "Cancel", user_reject_path(booking), class: "btn btn-normal", method: :patch, data: { confirm: "Are you sure?" } %>
+              <%= link_to "Cancel", booking_path(booking), class: "btn-move btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
             </div>
           </div>
         <% end %>
@@ -76,6 +76,30 @@
     <% end %>
   </div>
 
+    <%# MY-LIVES %>
+  <div class="container-profile">
+    <h2>My offered Life</h2>
+    <br>
+    <% if @lives.empty? %>
+      <p>No life. Go and create your first one! The button is in the navbar :)</p>
+    <% else %>
+      <% @lives.each do |life| %>
+        <div class="card-product">
+          <%= cl_image_tag life.photo.key, crop: :fill %>
+          <div class="card-product-infos">
+            <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
+            <p><strong>Job:</strong> <%= life.job.capitalize %></p>
+            <p><strong>Family:</strong> <%= life.family.capitalize %></p>
+            <p><strong>City:</strong> <%= life.city.capitalize %></p>
+            <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
+          </div>
+          <div>
+            <%= link_to "Cancel", life_path(life), class: "btn-move btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
   <%# Pending Bookings of my life %>
   <div class="container-profile">
@@ -98,11 +122,11 @@
               </div>
               <%# accept is functional %>
               <div>
-                <%= link_to "Accept", user_confirm_path(booking), class: "btn btn-normal", method: :patch, data: { confirm: "Are you sure?" } %>
+                <%= link_to "Accept", confirm_path(booking), class: "btn btn-normal", method: :patch, data: { confirm: "Are you sure?" } %>
               </div>
               <%# TODO not functional %>
               <div>
-                <%= link_to "Reject", user_reject_path(booking), class: "btn btn-normal", method: :patch, data: { confirm: "Are you sure?" } %>
+                <%= link_to "Reject", reject_path(booking), class: "btn btn-normal", method: :patch, data: { confirm: "Are you sure?" } %>
               </div>
             </div>
           <% end %>
@@ -132,36 +156,11 @@
               </div>
               <%# TODO not functional %>
               <div>
-                <%= link_to "Cancel", user_reject_path(booking), class: "btn btn-normal", method: :patch, data: { confirm: "Are you sure?" } %>
+                <%= link_to "Cancel", reject_path(booking), class: "btn btn-normal", method: :patch, data: { confirm: "Are you sure?" } %>
               </div>
             </div>
           <% end %>
         <% end %>
-      <% end %>
-    <% end %>
-  </div>
-
-  <%# MY-LIVES %>
-  <div class="container-profile">
-    <h2>My offered Life</h2>
-    <br>
-    <% if @lives.empty? %>
-      <p>No life. Go and create your first one! The button is in the navbar :)</p>
-    <% else %>
-      <% @lives.each do |life| %>
-        <div class="card-product">
-          <%= cl_image_tag life.photo.key, crop: :fill %>
-          <div class="card-product-infos">
-            <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
-            <p><strong>Job:</strong> <%= life.job.capitalize %></p>
-            <p><strong>Family:</strong> <%= life.family.capitalize %></p>
-            <p><strong>City:</strong> <%= life.city.capitalize %></p>
-            <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
-          </div>
-          <div>
-            <%= link_to "Cancel", life_path(life), class: "btn-move btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
-          </div>
-        </div>
       <% end %>
     <% end %>
   </div>
