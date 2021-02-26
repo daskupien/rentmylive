@@ -1,5 +1,5 @@
 class LivesController < ApplicationController
-  def index 
+  def index
     if params[:query].present?
       @lives = Life.where("city ILIKE ?", "%#{params[:query]}%")
     else
@@ -29,7 +29,7 @@ class LivesController < ApplicationController
   def destroy
     @life = Life.find(params[:id])
     @life.destroy
-    redirect_to lives_path
+    redirect_to user_path(current_user)
   end
 
   private
