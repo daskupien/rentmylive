@@ -35,9 +35,9 @@
                 <%= cl_image_tag booking.life.photo.key, crop: :fill %>
                 <div class="card-product-infos">
                   <h2><%= booking.life.user.first_name %> <%= booking.life.user.last_name %></h2>
-                  <p><strong>Job:</strong> <%= booking.life.job.capitalize %></p>
-                  <p><strong>Family:</strong> <%= booking.life.family.capitalize %></p>
-                  <p><strong>City:</strong> <%= booking.life.city.capitalize %></p>
+                  <p><strong>Job:</strong> <%= booking.life.job %></p>
+                  <p><strong>Family:</strong> <%= booking.life.family %></p>
+                  <p><strong>City:</strong> <%= booking.life.city %></p>
                   <p><strong>Total price: </strong><%= booking.total_price %> €</p>
                 </div>
               </div>
@@ -65,9 +65,9 @@
             <%= cl_image_tag booking.life.photo.key, crop: :fill %>
             <div class="card-product-infos">
               <h2><%= booking.life.user.first_name %> <%= booking.life.user.last_name %></h2>
-              <p><strong>Job:</strong> <%= booking.life.job.capitalize %></p>
-              <p><strong>Family:</strong> <%= booking.life.family.capitalize %></p>
-              <p><strong>City:</strong> <%= booking.life.city.capitalize %></p>
+              <p><strong>Job:</strong> <%= booking.life.job %></p>
+              <p><strong>Family:</strong> <%= booking.life.family %></p>
+              <p><strong>City:</strong> <%= booking.life.city %></p>
               <p><strong>Total price: </strong><%= booking.total_price %> €</p>
             </div>
             <%# TODO not functional %>
@@ -94,9 +94,9 @@
               <%= cl_image_tag life.photo.key, crop: :fill %>
               <div class="card-product-infos">
                 <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
-                <p><strong>Job:</strong> <%= life.job.capitalize %></p>
-                <p><strong>Family:</strong> <%= life.family.capitalize %></p>
-                <p><strong>City:</strong> <%= life.city.capitalize %></p>
+                <p><strong>Job:</strong> <%= life.job %></p>
+                <p><strong>Family:</strong> <%= life.family %></p>
+                <p><strong>City:</strong> <%= life.city %></p>
                 <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
               </div>
             </div>
@@ -123,9 +123,9 @@
               <%= cl_image_tag life.photo.key, crop: :fill %>
               <div class="card-product-infos">
                 <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
-                <p><strong>Job:</strong> <%= life.job.capitalize %></p>
-                <p><strong>Family:</strong> <%= life.family.capitalize %></p>
-                <p><strong>City:</strong> <%= life.city.capitalize %></p>
+                <p><strong>Job:</strong> <%= life.job %></p>
+                <p><strong>Family:</strong> <%= life.family %></p>
+                <p><strong>City:</strong> <%= life.city %></p>
                 <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
               </div>
               <%# accept is functional %>
@@ -157,9 +157,9 @@
               <%= cl_image_tag life.photo.key, crop: :fill %>
               <div class="card-product-infos">
                 <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
-                <p><strong>Job:</strong> <%= life.job.capitalize %></p>
-                <p><strong>Family:</strong> <%= life.family.capitalize %></p>
-                <p><strong>City:</strong> <%= life.city.capitalize %></p>
+                <p><strong>Job:</strong> <%= life.job %></p>
+                <p><strong>Family:</strong> <%= life.family %></p>
+                <p><strong>City:</strong> <%= life.city %></p>
                 <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
               </div>
               <%# TODO not functional %>
