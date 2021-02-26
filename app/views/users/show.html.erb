@@ -26,20 +26,24 @@
     <% if @bookings.where(confirmed: 'pending').empty? %>
       <p>No pending lifes</p>
     <% else %>
+
       <% @bookings.each do |booking| %>
         <% if booking.confirmed == 'pending' %>
           <div class="card-product">
-            <%= cl_image_tag booking.life.photo.key, crop: :fill %>
-            <div class="card-product-infos">
-              <h2><%= booking.life.user.first_name %> <%= booking.life.user.last_name %></h2>
-              <p><strong>Job:</strong> <%= booking.life.job.capitalize %></p>
-              <p><strong>Family:</strong> <%= booking.life.family.capitalize %></p>
-              <p><strong>City:</strong> <%= booking.life.city.capitalize %></p>
-              <p><strong>Total price: </strong><%= booking.total_price %> €</p>
-            </div>
+            <div class="d-flex justify-content-between w-100 align-items-center">
+              <div class="d-flex justify-content-start">
+                <%= cl_image_tag booking.life.photo.key, crop: :fill %>
+                <div class="card-product-infos">
+                  <h2><%= booking.life.user.first_name %> <%= booking.life.user.last_name %></h2>
+                  <p><strong>Job:</strong> <%= booking.life.job.capitalize %></p>
+                  <p><strong>Family:</strong> <%= booking.life.family.capitalize %></p>
+                  <p><strong>City:</strong> <%= booking.life.city.capitalize %></p>
+                  <p><strong>Total price: </strong><%= booking.total_price %> €</p>
+                </div>
+              </div>
             <%# TODO not functional %>
             <div>
-              <%= link_to "Cancel", booking_path(booking), class: "btn-move btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
+              <%= link_to "Cancel", booking_path(booking), class: "btn btn-normal mr-3", method: :delete, data: { confirm: "Are you sure?" } %>
             </div>
           </div>
         <% end %>
@@ -76,7 +80,7 @@
     <% end %>
   </div>
 
-    <%# MY-LIVES %>
+  <%# MY-LIVES %>
   <div class="container-profile">
     <h2>My offered Life</h2>
     <br>
@@ -85,16 +89,20 @@
     <% else %>
       <% @lives.each do |life| %>
         <div class="card-product">
-          <%= cl_image_tag life.photo.key, crop: :fill %>
-          <div class="card-product-infos">
-            <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
-            <p><strong>Job:</strong> <%= life.job.capitalize %></p>
-            <p><strong>Family:</strong> <%= life.family.capitalize %></p>
-            <p><strong>City:</strong> <%= life.city.capitalize %></p>
-            <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
-          </div>
-          <div>
-            <%= link_to "Cancel", life_path(life), class: "btn-move btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
+          <div class="d-flex justify-content-between w-100 align-items-center">
+            <div class="d-flex justify-content-start">
+              <%= cl_image_tag life.photo.key, crop: :fill %>
+              <div class="card-product-infos">
+                <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
+                <p><strong>Job:</strong> <%= life.job.capitalize %></p>
+                <p><strong>Family:</strong> <%= life.family.capitalize %></p>
+                <p><strong>City:</strong> <%= life.city.capitalize %></p>
+                <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
+              </div>
+            </div>
+            <div>
+              <%= link_to "Cancel", life_path(life), class: "btn btn-normal mr-3", method: :delete, data: { confirm: "Are you sure?" } %>
+            </div>
           </div>
         </div>
       <% end %>
