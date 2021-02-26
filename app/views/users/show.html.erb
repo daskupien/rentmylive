@@ -1,8 +1,8 @@
 <div class="container-general">
   <div>
     <%# USER-PROFILE %>
-    <div>
-      <h1>Hi <%= @user.first_name %>!</h1>
+    <h1>Hi <%= @user.first_name %>!</h1>
+    <div class="user-profile">
       <br>
         <p><strong>Your Email:</strong> <%= @user.email %></p>
         <p><strong>Your Address:</strong> <%= @user.address %></p>
@@ -10,9 +10,10 @@
         <p><strong>Your Gender:</strong> <%= @user.gender %></p>
         <p><strong>Your Bio:</strong> <%= @user.host_bio %></p>
       <br>
-    </div>
+
 
     <%# UPDATE-PROFILE %>
+<<<<<<< HEAD
     <div>
       <%= link_to "Edit profile", lives_path, class: "btn-normal" %>
     </div>
@@ -24,6 +25,11 @@
           <%= f.file_field :photo, direct_upload: true %><br><br>
         <%= f.submit "Update Avatar", class: "btn btn-normal" %>
   <% end %>
+=======
+      <div>
+        <%= link_to "Update Your Profile!", lives_path, class: "btn-normal" %>
+      </div>
+>>>>>>> master
     </div>
   </div>
 
@@ -78,6 +84,9 @@
             <div class="d-flex justify-content-between w-100">
               <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
             </div>
+          </div>
+          <div>
+            <%= link_to "Cancel my offer", life_path(life), class: "btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
           </div>
         </div>
       <% end %>
