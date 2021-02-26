@@ -20,9 +20,14 @@
         <%= link_to "Become Host", new_life_path, class: "nav-link" %>
       </li>
       <% if user_signed_in? %>
-        <li class="nav-item" id="avatar-items">
-          <%= link_to image_tag("https://kitt.lewagon.com/placeholder/users/cveneziani"), user_path(current_user), class: "avatar" %>
-          <%= link_to current_user.first_name, user_path(current_user), class: "nav-link" %>
+      <li class="nav-item" id="avatar-items">
+        <%= link_to current_user.first_name, user_path(current_user), class: "nav-link" %>
+
+          <% if current_user.photo.attached? %>
+            <%= link_to cl_image_tag(current_user.photo.key), user_path(current_user), class: "avatar" %> 
+          <% else %>
+            <%= link_to cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1614335184/kisspng-computer-icons-person-avatar-download-person-icon-5b480703d1f604.21741917153144704386_foan5y.png"), user_path(current_user), class: "avatar" %>
+          <% end %>
         </li>
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>

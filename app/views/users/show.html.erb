@@ -1,22 +1,20 @@
 <div class="container-narrow">
   <div class="container-profile">
     <%# USER-PROFILE %>
-    <h1>Hi <%= @user.first_name %>!</h1>
+    <h1>Hi <%= current_user.first_name %> 👋🏼</h1>
     <br>
     <div class="user-profile">
-      <h2>My Informations:</h2>
-      <br>
-        <p><strong>Your Email:</strong> <%= @user.email %></p>
-        <p><strong>Your Address:</strong> <%= @user.address %></p>
-        <p><strong>Your Age:</strong> <%= @user.age %></p>
-        <p><strong>Your Gender:</strong> <%= @user.gender %></p>
-        <%# <p><strong>Your Bio:</strong> <%= @user.host_bio %></p>
+        <p><strong>Email:</strong> <%= @user.email %></p>
+        <p><strong>Address:</strong> <%= @user.address %></p>
+        <p><strong>Age:</strong> <%= @user.age %></p>
+        <p><strong>Gender:</strong> <%= @user.gender %></p>
+        <p><strong>Bio:</strong> <%= @user.host_bio %></p>
       <br>
 
 
     <%# UPDATE-PROFILE %>
       <div>
-        <%= link_to "Update Your Profile!", lives_path, class: "btn btn-normal" %>
+        <%= link_to "Edit profile", edit_user_registration_path(current_user), class: "btn btn-normal" %>
       </div>
     </div>
   </div>

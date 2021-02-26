@@ -67,3 +67,6 @@ gem 'devise'
 
 #cloudinay test
 gem 'cloudinary'
+
+#gravatar
+gem 'gravatar', '~> 1.0'
