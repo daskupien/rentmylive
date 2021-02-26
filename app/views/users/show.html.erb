@@ -1,8 +1,10 @@
 <div class="container-general">
-  <div>
+  <div class="container-profile">
     <%# USER-PROFILE %>
     <h1>Hi <%= @user.first_name %>!</h1>
+    <br>
     <div class="user-profile">
+      <h2>My Informations</h2>
       <br>
         <p><strong>Your Email:</strong> <%= @user.email %></p>
         <p><strong>Your Address:</strong> <%= @user.address %></p>
@@ -14,68 +16,48 @@
 
     <%# UPDATE-PROFILE %>
       <div>
-        <%= link_to "Update Your Profile!", lives_path, class: "btn-normal" %>
+        <%= link_to "Update Your Profile!", lives_path, class: "btn btn-normal" %>
       </div>
     </div>
   </div>
 
   <%# MY-BOOKINGS %>
-  <div>
-    <div class="container-cards">
-      <h2>My Bookings</h2>
-      <% @bookings.each do |booking| %>
-        <div class="card-product">
-          <%= cl_image_tag booking.life.photo.key, crop: :fill %>
-          <div class="card-product-infos">
-            <div class="d-flex justify-content-between w-100">
-              <h2><%= booking.life.user.first_name %>'s life</h2>
-            </div>
-            <div class="d-flex justify-content-between w-100">
-              <p><strong>Job:</strong> <%= booking.life.job.capitalize %></p>
-              <p><strong>Family:</strong> <%= booking.life.family.capitalize %></p>
-              <p><strong>City:</strong> <%= booking.life.city.capitalize %></p>
-            </div>
-            <div class="d-flex justify-content-between w-100">
-              <p><strong>Bio:</strong> <%= booking.life.description.capitalize %></p>
-              <p><strong>Relationship:</strong> <%= booking.life.relationship.capitalize %></p>
-              <p><strong>Hobby:</strong> <%= booking.life.hobby.capitalize %></p>
-            </div>
-            <div class="d-flex justify-content-between w-100">
-              <p><strong>Total price: </strong><%= booking.total_price %> €</p>
-            </div>
-          </div>
+  <div class="container-profile">
+    <h2>My Bookings</h2>
+    <br>
+    <% @bookings.each do |booking| %>
+      <div class="card-product">
+        <%= cl_image_tag booking.life.photo.key, crop: :fill %>
+        <div class="card-product-infos">
+          <h2><%= booking.life.user.first_name %> <%= booking.life.user.last_name %></h2>
+          <p><strong>Job:</strong> <%= booking.life.job.capitalize %></p>
+          <p><strong>Family:</strong> <%= booking.life.family.capitalize %></p>
+          <p><strong>City:</strong> <%= booking.life.city.capitalize %></p>
+          <p><strong>Total price: </strong><%= booking.total_price %> €</p>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 
   <%# MY-LIVES %>
-  <div>
-    <div class="container-cards">
-      <h2>My Lives</h2>
-      <% @lives.each do |life| %>
-        <div class="card-product">
-          <%= cl_image_tag life.photo.key, crop: :fill %>
-          <div class="card-product-infos">
-            <div class="d-flex justify-content-between w-100">
-              <p><strong>Job:</strong> <%= life.job.capitalize %></p>
-              <p><strong>Family:</strong> <%= life.family.capitalize %></p>
-              <p><strong>City:</strong> <%= life.city.capitalize %></p>
-            </div>
-            <div class="d-flex justify-content-between w-100">
-              <p><strong>Bio:</strong> <%= life.description.capitalize %></p>
-              <p><strong>Relationship:</strong> <%= life.relationship.capitalize %></p>
-              <p><strong>Hobby:</strong> <%= life.hobby.capitalize %></p>
-            </div>
-            <div class="d-flex justify-content-between w-100">
-              <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
-            </div>
-          </div>
-          <div>
-            <%= link_to "Cancel my offer", life_path(life), class: "btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
-          </div>
+
+  <div class="container-profile">
+    <h2>My Lives</h2>
+    <br>
+    <% @lives.each do |life| %>
+      <div class="card-product">
+        <%= cl_image_tag life.photo.key, crop: :fill %>
+        <div class="card-product-infos">
+          <h2><%= life.user.first_name %> <%= life.user.last_name %></h2>
+          <p><strong>Job:</strong> <%= life.job.capitalize %></p>
+          <p><strong>Family:</strong> <%= life.family.capitalize %></p>
+          <p><strong>City:</strong> <%= life.city.capitalize %></p>
+          <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
         </div>
-      <% end %>
-    </div>
+        <div>
+          <%= link_to "Cancel my offer", life_path(life), class: "btn btn-normal", method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
