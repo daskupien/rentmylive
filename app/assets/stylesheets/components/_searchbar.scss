@@ -34,7 +34,10 @@
     outline: none;
     vertical-align: middle;
     width: 397px;
-    padding-top: 3px;
+    padding-top: 0;
+    border-left: 1px solid;
+    margin-top: -3px;
+    padding-bottom: 0;
   }
   i {
     font-size: 27px;
