@@ -3,7 +3,7 @@
   <h1>The Life of <%= @life.user.first_name %></h1>
   <br>
   <br>
-  <div class="container-life">
+  <div class="container-life d-flex">
     <div class="image text-center">
       <%= cl_image_tag @life.photo.key, width: 250, height: 300, crop: :fill %>
     </div>
