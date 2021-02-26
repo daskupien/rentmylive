@@ -18,15 +18,15 @@ valerie = User.create!(email: 'valerie@lewagon.com', password: '1234567', first_
 
 andy = User.create!(email: 'andy@lewagon.com', password: '1234567', first_name: 'Andy', last_name: 'Baranov', address: '********** (top secret)', gender: 'male', host_bio:'data')
 
-tom = User.create!(email: 'tom@email.com', password: '1234567', first_name: 'Tom', last_name: 'Riddle', address: 'street', gender: 'male', host_bio:'I love Harry Potter')
+leon = User.create!(email: 'leon@lewagon.com', password: '1234567', first_name: 'Leon', last_name: 'Riddle', address: 'Berlin somewhere', gender: 'male', host_bio:'I love Harry Potter')
 
 sarah = User.create!(email: 'sarah@lewagon.com', password: '1234567', first_name: 'Sarah', last_name: 'O’Grady', address: 'Central London', gender: 'female', host_bio:'Tea time')
 
 euan = User.create!(email: 'euan@lewagon.com', password: '1234567', first_name: 'Euan', last_name: 'Gillespie-Taylor', address: 'Wales Greenland', gender: 'male', host_bio:'Code Hero')
 
-john = User.create!(email: 'john@email.com', password: '1234567', first_name: 'John', last_name: 'Lemon', address: 'street', gender: 'male', host_bio:'Music is my business')
+claire = User.create!(email: 'claire@lewagon.com', password: '1234567', first_name: 'Claire', last_name: 'Gautier', address: 'French Countryside', gender: 'female', host_bio:'Music is my business')
 
-west = User.create!(email: 'west@email.com', password: '1234567', first_name: 'West', last_name: 'Kanye', address: 'street', gender: 'female', host_bio:'West is cool')
+sébastien = User.create!(email: 'sébastien@lewagon.com', password: '1234567', first_name: 'Sébastien', last_name: 'Saunier', address: 'Paris', gender: 'male', host_bio:'West is cool')
 
 puts 'creating lives'
 
@@ -61,7 +61,7 @@ life_2.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 life_2.save
 
 life_3 = Life.new(
-    description: 'Wenn du Daten liebst und Spaß daran hast dich wegen Studenten zu quälen, bist du bei mir genau richtig. (edited)',
+    description: 'Если ты даты любишь и это для тебя удовольствие мучить себя для студентов,ты точно совершенно со мной.',
     price_per_day: 5000,
     city: 'Unknown',
     job: 'I manage all data, I mean ALL of it!',
@@ -74,21 +74,6 @@ life_3 = Life.new(
 file = URI.open('http://drive.google.com/uc?export=view&id=1qAF9KtA0gZo_4lAe6kanCQcv_-53HeEC')
 life_3.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 life_3.save
-
-life_4 = Life.new(
-    description: 'This is a description',
-    price_per_day: 100,
-    city: 'New York',
-    job: 'stripper',
-    family: 'all weird people',
-    relationship: 'paired',
-    hobby: 'dancing',
-    user_id: tom.id,
-    img_url: 'https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
-)
-file = URI.open('https://res.cloudinary.com/rentmylife/image/upload/v1614175712/assets/kinga-cichewicz-aHu_xuRvsZ4-unsplash_qhxh3r.jpg')
-life_4.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
-life_4.save
 
 life_5 = Life.new(
     description: 'Dear Sir or Madam. My life will teach you the benefits of elite etiquette. Moreover, you will rule over England. Sincerely, the Queen',
@@ -105,6 +90,36 @@ file = URI.open('http://drive.google.com/uc?export=view&id=1fhaBbnCCbZqBRBjbQNtl
 life_5.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 life_5.save
 
+life_7 = Life.new(
+    description: 'When you book my life, you will learn a lot of French. You do not have a chance to not to, since my browser will only display French language.',
+    price_per_day: 225,
+    city: 'Somewhere in the French countryside',
+    job: 'Freelance Developer',
+    family: 'You will see. They are very nice as I am',
+    relationship: 'This is a secret and not included in the booking',
+    hobby: 'Breathing nice fresh air while my fellow devs are in the polluted Paris',
+    user_id: claire.id,
+    img_url: 'http://drive.google.com/uc?export=view&id=1ESzDmQ3etW7pYWwH9IOnZzLuJ2A38Tym'
+)
+file = URI.open('http://drive.google.com/uc?export=view&id=1ESzDmQ3etW7pYWwH9IOnZzLuJ2A38Tym')
+life_7.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_7.save
+
+life_8 = Life.new(
+    description: "Experience a life where you will be able to sneak into everyone's code. I will be everywhere. I mean EVERYWHERE!",
+    price_per_day: 20_000,
+    city: 'Paris',
+    job: 'F***ing CTO of f***ing Le Wagon',
+    family: '0101101101000101011010010',
+    relationship: 'My life will prove to you that it is possible to love code',
+    hobby: 'Creating command lines nobody understands, but is forced to through in anyway.',
+    user_id: sébastien.id,
+    img_url: 'http://drive.google.com/uc?export=view&id=1TFe84yNcPeKecReVuYmDwAoGynmklHz1'
+)
+file = URI.open('http://drive.google.com/uc?export=view&id=1TFe84yNcPeKecReVuYmDwAoGynmklHz1')
+life_8.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_8.save
+
 life_6 = Life.new(
     description: "Do you like challenges? I offer you the opportunity to train your patience. The group of GreenFunder assigned to me can't be beaten in terms of clumsiness.",
     price_per_day: 200,
@@ -120,34 +135,19 @@ file = URI.open('http://drive.google.com/uc?export=view&id=1WOMH77vWsywjXyT47QxF
 life_6.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
 life_6.save
 
-life_7 = Life.new(
-    description: 'This is a description',
-    price_per_day: 100,
-    city: 'New York',
-    job: 'stripper',
-    family: 'all weird people',
-    relationship: 'paired',
-    hobby: 'dancing',
-    user_id: john.id,
-    img_url: 'https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
+life_4 = Life.new(
+    description: "Please book my life! Maybe you'll have more success convincing Whitney that we belong together.",
+    price_per_day: 215,
+    city: 'Berlin',
+    job: 'Freelance Developer',
+    family: 'Robot vacuum cleaner',
+    relationship: 'Whitney?',
+    hobby: 'Trying to hack my robot vacuum cleaner, so it will do the windows also',
+    user_id: leon.id,
+    img_url: 'http://drive.google.com/uc?export=view&id=1TNX4pmkCw94cefDs_RsPl-TYbuvh-uGj'
 )
-file = URI.open('https://res.cloudinary.com/rentmylife/image/upload/v1614175708/assets/esther-ann-glpYh1cWf0o-unsplash_x8xr93.jpg')
-life_7.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
-life_7.save
-
-life_8 = Life.new(
-    description: 'This is a description',
-    price_per_day: 100,
-    city: 'New York',
-    job: 'stripper',
-    family: 'all weird people',
-    relationship: 'paired',
-    hobby: 'dancing',
-    user_id: west.id,
-    img_url: 'https://images.unsplash.com/photo-1525735765456-7f67273a9d93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
-)
-file = URI.open('https://res.cloudinary.com/rentmylife/image/upload/v1614175306/assets/nathan-dumlao-R4O7S1KoF6I-unsplash_ez77ex.jpg')
-life_8.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
-life_8.save
+file = URI.open('http://drive.google.com/uc?export=view&id=1TNX4pmkCw94cefDs_RsPl-TYbuvh-uGj')
+life_4.photo.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
+life_4.save
 
 puts 'finished'
