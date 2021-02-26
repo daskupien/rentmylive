@@ -31,3 +31,12 @@
 .btn-move {
   margin-left: 200px;
 }
+
+.btn-green {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: light;
+  background: green;
+  transition: background 0.3s ease;
+}
