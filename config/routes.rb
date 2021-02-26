@@ -6,5 +6,9 @@ Rails.application.routes.draw do
   resources :lives, only: [ :index, :show, :new, :create, :destroy] do
     resources :bookings, only: [ :new, :create ]
   end
-  resources :users, only: [ :show ]
+  resources :users, only: [ :show ] do
+    # resources :bookings, only: [ :confirm_booking, :reject_booking ]
+    patch '/confirm_booking/:id', to: 'bookings#confirm_booking', as: :confirm
+    patch '/reject_booking/:id', to: 'bookings#reject_booking', as: :reject
+  end
 end

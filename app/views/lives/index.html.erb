@@ -7,8 +7,8 @@
         <%= cl_image_tag life.photo.key, crop: :fill %>
         <div class="card-lives-content">
           <p class="text-center"><strong><%= life.user.first_name %> <%= life.user.last_name %></strong></p>
-          <p><strong>City:</strong> <%= life.city.capitalize %></p>
-          <p><strong>Info:</strong> <%= life.description.capitalize %></p>
+          <p><strong>City:</strong> <%= life.city %></p>
+          <p><strong>Info:</strong> <%= life.description %></p>
           <p><strong>Price Per Day: </strong><%= life.price_per_day %>€</p>
         </div>
         <div class="card-lives-button">
