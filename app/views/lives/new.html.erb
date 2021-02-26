@@ -1,28 +1,27 @@
 <div class="container-narrow">
-<% if current_user.lives.count < 1 %>
-<div class="container-general">
-  <h1>Create Your Life</h1>
-
-  <%= simple_form_for @life, url: lives_path, method: :post do |f| %>
-    <%= f.input :description, placeholder: "please describe your life!" %>
-    <%= f.label "Profile Photo" %>
-    <br>
-    <%= f.file_field :photo, direct_upload: true %><br><br>
-    <%= f.input :price_per_day %>
-    <%= f.input :city %>
-    <%= f.input :job %>
-    <%= f.input :family %>
-    <%= f.input :relationship %>
-    <%= f.input :hobby %>
-    <br>
-    <%= f.submit class: "btn btn-normal" %>
+  <% if current_user.lives.count < 1 %>
+    <div class="container-general">
+      <h1>Create Your Life</h1>
+      <%= simple_form_for @life, url: lives_path, method: :post do |f| %>
+        <%= f.input :description, placeholder: "please describe your life!" %>
+        <%= f.label "Profile Photo" %>
+        <br>
+        <%= f.file_field :photo, direct_upload: true %><br><br>
+        <%= f.input :price_per_day %>
+        <%= f.input :city %>
+        <%= f.input :job %>
+        <%= f.input :family %>
+        <%= f.input :relationship %>
+        <%= f.input :hobby %>
+        <br>
+        <%= f.submit class: "btn btn-normal" %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="container-general text-center">
+      <h1>You can only offer one life!</h1>
+      <br>
+      <p>If you want to create a new offer, please <%= link_to "delete your life first", life_path(current_user) %>.<p>
+    </div>
   <% end %>
-</div>
-<% else %>
-<div class="container-general">
-  <h1>You can only offer one life!</h1>
-  <br>
-  <p>If you want to create a new offer, please <%= link_to "delete your life first", life_path(current_user) %>.<p>
-</div>
-<% end %>
 </div>
