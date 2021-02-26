@@ -1,16 +1,16 @@
-<div class="container-general">
+<div class="container-narrow">
   <div class="container-profile">
     <%# USER-PROFILE %>
     <h1>Hi <%= @user.first_name %>!</h1>
     <br>
     <div class="user-profile">
-      <h2>My Informations</h2>
+      <h2>My Informations:</h2>
       <br>
         <p><strong>Your Email:</strong> <%= @user.email %></p>
         <p><strong>Your Address:</strong> <%= @user.address %></p>
         <p><strong>Your Age:</strong> <%= @user.age %></p>
         <p><strong>Your Gender:</strong> <%= @user.gender %></p>
-        <p><strong>Your Bio:</strong> <%= @user.host_bio %></p>
+        <%# <p><strong>Your Bio:</strong> <%= @user.host_bio %></p>
       <br>
 
 
@@ -23,7 +23,7 @@
 
   <%# MY-BOOKINGS %>
   <div class="container-profile">
-    <h2>My Bookings</h2>
+    <h2>My Bookings:</h2>
     <br>
     <% @bookings.each do |booking| %>
       <div class="card-product">
@@ -40,9 +40,8 @@
   </div>
 
   <%# MY-LIVES %>
-
   <div class="container-profile">
-    <h2>My Lives</h2>
+    <h2>My Lives:</h2>
     <br>
     <% @lives.each do |life| %>
       <div class="card-product">
